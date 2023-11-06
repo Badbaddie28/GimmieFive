@@ -1405,6 +1405,34 @@ label#largeFile:after {
     text-align: center;
 }
 
-.BrandLinks button{
-    
+/* Order Links */
+.CardDetailsRow{
+    display: flex;
+}
+.OrderStatusFirstHero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 3rem;
+}
+
+.OrderStatusBuyerDetails{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction:column;
+}
+
+.OrderStatusBuyerDetails span{
+    font-size: 1.1rem
+}
+
+.OrderStatusBox{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.OrderStatusBox button{
+cursor: default !important;
+margin-top: 2rem;
 }
