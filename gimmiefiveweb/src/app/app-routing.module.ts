@@ -9,6 +9,8 @@ import { ContactusComponent } from './client/user/contactus/contactus.component'
 import { ProfileComponent } from './client/user/profile/profile.component';
 import { CartComponent } from './client/user/cart/cart.component';
 import { CreateProductComponent } from './client/admin/create-product/create-product.component';
+import { DashboardComponent } from './client/admin/dashboard/dashboard.component';
+import { ProductListComponent } from './client/admin/product-list/product-list.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,10 @@ const routes: Routes = [
   { path: 'contacts', component: ContactusComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'cart', component: CartComponent},
-  {path: 'create-product', component:CreateProductComponent}
+  {path: 'create-product', component:CreateProductComponent},
+  {path: 'dashboard', component:DashboardComponent},
+  {path: 'product-list', component:ProductListComponent},
+  
 ];
 
 @NgModule({

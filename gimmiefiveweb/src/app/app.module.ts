@@ -19,6 +19,8 @@ import { CreateProductComponent } from './client/admin/create-product/create-pro
 import { VariantProductComponent } from './client/admin/variant-product/variant-product.component';
 import { InformationProductComponent } from './client/admin/information-product/information-product.component';
 import { DashboardComponent } from './client/admin/dashboard/dashboard.component';
+import { ProductListComponent } from './client/admin/product-list/product-list.component';
+import { ProductListEditComponent } from './client/admin/product-list-edit/product-list-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { DashboardComponent } from './client/admin/dashboard/dashboard.component
     CreateProductComponent,
     VariantProductComponent,
     InformationProductComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductListComponent,
+    ProductListEditComponent
   ],
   imports: [
     BrowserModule,
