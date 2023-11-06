@@ -11,6 +11,7 @@ import { CartComponent } from './client/user/cart/cart.component';
 import { CreateProductComponent } from './client/admin/create-product/create-product.component';
 import { DashboardComponent } from './client/admin/dashboard/dashboard.component';
 import { ProductListComponent } from './client/admin/product-list/product-list.component';
+import { ProductListEditComponent} from './client/admin/product-list-edit/product-list-edit.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'create-product', component:CreateProductComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path: 'product-list', component:ProductListComponent},
+  {path: 'product-list-edit', component:ProductListEditComponent}
   
 ];
 

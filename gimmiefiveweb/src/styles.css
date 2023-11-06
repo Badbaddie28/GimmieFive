@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
     
   }
 @media only screen and  (min-width: 768px) {
@@ -1350,6 +1351,30 @@ label#largeFile:after {
 }
 
 /* DASHBOARD */
+.Dashboard h1{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.PendingTitle{
+    display: flex;
+    justify-content: space-between;
+}
+
+.PendingButtons button{
+    margin-right: .5rem;
+}
+
+.DashboardFirstHero table{
+    text-align: center;
+}
+
+
+
+
+
+
+
 
 
 /* LIST OF PRODUCTS */
