@@ -8,11 +8,31 @@
 
             <a class="nav-link" routerLink="/home">Home</a>
             <a class="nav-link" routerLink="/shop">Shop</a>
-            <a class="nav-link" routerLink="/contacts">Contact Us</a>
+            
             <a class="nav-link" routerLink="/login">Login</a>
             <a class="nav-link" routerLink="/create-product">Create</a>
-            <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+            <a class="nav-link" routerLink="/orderstatus">Order Status</a>
+            
             <a class="nav-link" routerLink="/product-list">List of Products</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="/complete">Complete</a></li>
+                  <li><a class="dropdown-item" routerLink="/pending">Pending</a></li>
+                  <li><a class="dropdown-item" routerLink="/cancelled">Cancelled</a></li>
+                </ul>
+              </div>
+            <!-- <li class="nav-item dropdown">>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/Complete">Complete</a></li>
+                <li><a class="dropdown-item" routerLink="/Pending">Pending</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" routerLink="Cancelled">Cancelled</a></li>
+              </ul>
+            </li> -->
+
 
         </div>
         <div class="BrandComponents container-fluid col-1 px-2">

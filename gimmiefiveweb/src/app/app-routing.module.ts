@@ -12,7 +12,10 @@ import { CreateProductComponent } from './client/admin/create-product/create-pro
 import { DashboardComponent } from './client/admin/dashboard/dashboard.component';
 import { ProductListComponent } from './client/admin/product-list/product-list.component';
 import { ProductListEditComponent} from './client/admin/product-list-edit/product-list-edit.component';
-
+import { CompleteComponent } from './client/admin/complete/complete.component';
+import { PendingComponent } from './client/admin/pending/pending.component';
+import { CancelledComponent } from './client/admin/cancelled/cancelled.component';
+import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -26,7 +29,11 @@ const routes: Routes = [
   {path: 'create-product', component:CreateProductComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path: 'product-list', component:ProductListComponent},
-  {path: 'product-list-edit', component:ProductListEditComponent}
+  {path: 'product-list-edit', component:ProductListEditComponent},
+  {path: 'complete', component:CompleteComponent},
+  {path: 'pending', component:PendingComponent},
+  {path: 'cancelled', component:CancelledComponent},
+  {path: 'orderstatus', component:OrderstatusComponent},
   
 ];
 

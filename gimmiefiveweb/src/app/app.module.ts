@@ -21,6 +21,10 @@ import { InformationProductComponent } from './client/admin/information-product/
 import { DashboardComponent } from './client/admin/dashboard/dashboard.component';
 import { ProductListComponent } from './client/admin/product-list/product-list.component';
 import { ProductListEditComponent } from './client/admin/product-list-edit/product-list-edit.component';
+import { CompleteComponent } from './client/admin/complete/complete.component';
+import { PendingComponent } from './client/admin/pending/pending.component';
+import { CancelledComponent } from './client/admin/cancelled/cancelled.component';
+import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { ProductListEditComponent } from './client/admin/product-list-edit/produ
     InformationProductComponent,
     DashboardComponent,
     ProductListComponent,
-    ProductListEditComponent
+    ProductListEditComponent,
+    CompleteComponent,
+    PendingComponent,
+    CancelledComponent,
+    OrderstatusComponent
   ],
   imports: [
     BrowserModule,
