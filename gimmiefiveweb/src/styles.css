@@ -1217,14 +1217,11 @@ hr{
 }
 
 .CreateVariantComponentsRow select{
-    margin-top: 1rem !important;
+    margin-top: 1rem;
     background-color: #F9FAFB  !important;
+    padding-top: 1rem;
 }
 
-.CreateColor .form-control{
-    margin-top: 1.3rem !important;
-    text-align: center;
-}
 
 .CreatePricingInput{
     padding-top: 1rem;
