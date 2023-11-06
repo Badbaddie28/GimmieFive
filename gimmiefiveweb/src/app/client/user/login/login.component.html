@@ -7,15 +7,15 @@
                 <div class="col-6">
                     <img src="../../../../assets/model.png" width="403.5px" height="507px" >
                 </div>
-            
-                <div class="LoginForm col-6">
+              
+                <div class="LoginForm col-6">  <form [formGroup]="form"(submit)="submit()" id="msform"> 
                     <h1> Log In </h1>
                     <div class="LoginClass">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" formControlName="email">
                     </div>
                     
                     <div class="input-group" id="show_hide_password">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" formControlName="password">
                         <div class="input-group-addon">
                             <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
                         </div>
@@ -26,8 +26,9 @@
                         <a class="ForgotPassword nav-link" href="#"> Forgot your password? </a>
                     </div>    
 
-                    <button type="button" class="LoginButton btn btn-primary">Log In</button>   
-                    
+                    <button type="submit" class="LoginButton btn btn-primary">Log In</button>   
+
+                     
                     <div class="SignInReminder">
                         <label for="Reminder"> Don't have an account yet?
                             <a class="nav-link" routerLink="/register"> Register!</a>
@@ -42,14 +43,14 @@
                             <a href="#"><img src="../../../../assets/google.png" height="75px" width="75px"></a>
                         </div>
                     </div>
-                    
+                      </form>   
                     </div>
-                    
+               
             </div>
 
         </div>
 
-    </main>
+ </main>
     <script>
         $(document).ready(function() {
          $("#show_hide_password a").on('click', function(event) {
