@@ -7,26 +7,41 @@
                 <div class="col-6">
                     <img src="../../../../assets/model.png" width="403.5px" height="507px" >
                 </div>
-                <div class="LoginForm col-6">
+                <div class="RegisterForm col-6">
                     <h1> Create Account </h1>
-                    <div class="LoginClass">
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    <div class="RegisterName">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
                     </div>
-                    <div class="input-group" id="show_hide_password">
-                        <input type="password" class="form-control" placeholder="Password">
-                        <div class="input-group-addon">
-                            <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                    <div class="RegisterAddress">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="House Number">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Street">
+                      </div>
+                      <div class="RegisterAddress2">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Baranggay">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="City">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Province">
+                      </div>
+                      <div class="RegisterNumber">
+                        <input type="number" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Postal Code">
+                        <input type="number" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Number">
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group" id="show_hide_password">
+                            <input class="form-control" type="password" placeholder="Password">
+                            <div class="input-group-addon">
+                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                            </div>
                         </div>
-
-                    </div>  
+                    </div>
+                    
+                    
                     
 
                     <button type="button" class="Registerbutton btn btn-primary mt-3">Register Now</button>   
                     <div class="SignInReminder">
                         <label for="Reminder"> Already Have An Account?
-                            <a class="nav-link" href="../HTML/login.html"> Sign On!</a>
+                            <a class="nav-link" href="../HTML/login.html"> Sign In!</a>
                         </label> 
                     </div>
 
@@ -47,20 +62,7 @@
         </div>       
     </main>
     <script>
-        $(document).ready(function() {
-         $("#show_hide_password a").on('click', function(event) {
-             event.preventDefault();
-             if ($('#show_hide_password input').attr("type") == "text") {
-                 $('#show_hide_password input').attr('type', 'password');
-                 $('#show_hide_password i').addClass("fa-eye-slash");
-                 $('#show_hide_password i').removeClass("fa-eye");
-             } else if ($('#show_hide_password input').attr("type") == "password") {
-                 $('#show_hide_password input').attr('type', 'text');
-                 $('#show_hide_password i').removeClass("fa-eye-slash");
-                 $('#show_hide_password i').addClass("fa-eye");
-             }
-         });
-     });
+       
      </script>
 
      <!-- Modal -->
