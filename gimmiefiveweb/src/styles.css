@@ -26,9 +26,9 @@
 
   @font-face {
     font-family: 'Montserrat';
-    src: url(../FONTS/Montserrat-VariableFont_wght.ttf);
+    src: url(./assets/FONTS/Montserrat-VariableFont_wght.ttf);
     font-family: 'League Spartan';
-    src: url(../FONTS/LeagueSpartan-VariableFont_wght.ttf);
+    src: url(./assets/FONTS/LeagueSpartan-VariableFont_wght.ttf);
 }
 
 
