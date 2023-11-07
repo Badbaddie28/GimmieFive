@@ -1,12 +1,13 @@
 <body>
 <app-header></app-header>
-    <main>
+    <main>                            
+        <form [formGroup]="form"(submit)="submit()" id="msform">  
+
         <div class="CreateMainContainer container">
             <div class="CreateHero">
                 <div class="CreateFirstLayer">
                     <div class="CreatePublishButton">
-                        <button type="button" class="btn btn-success">Publish Button</button>
-                        <button type="button" class="btn btn-light">Save as Draft </button>
+                        <button type="submit" class="btn btn-success">Publish Button</button>
                     </div>
                 </div>
                 <div class="CreateSecondLayer">
@@ -36,30 +37,29 @@
                                 <span>  50-60 characters is the recommended length for search engines.</span>
                             </div>
                             <div class="CreateTitleForm">
-                                <form>
+                            
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Bathrobe, Towel..." value="Bathrobe, Towel..." required>
+                                        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Bathrobe, Towel..." value="Bathrobe, Towel..." formControlName="title" required>
                                         <label for="floatingInputGrid">Title</label>
                                     </div>
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Bathrobe, Towel..." value="Bathrobe, Towel..." required>
-                                        <label for="floatingInputGrid">SubTitle</label>
-                                    </div>
-                                </form>
+                                   
+                               
                             </div>
                             <div class="CreateReminder">
                                 <p> Give your product a short and clear description. </p>
                                 <p> 120-160 characters is the recommended length for search engines.</p>
                                 <div class="CreateReminderForm mb-4 mt-2">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Extra-long and oversized in fit. 100% organic cotton. Made in Portugal..." id="floatingTextarea" required></textarea>
+                                        <textarea class="form-control" placeholder="Extra-long and oversized in fit. 100% organic cotton. Made in Portugal..." id="floatingTextarea" formControlName="description" required></textarea>
                                         <label for="floatingTextarea">Description</label>
                                       </div>
                             </div>
                             </div>
-                        </div>    
+                        </div>  
+
                       </div>
                     </div>
+
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
@@ -79,16 +79,16 @@
                                 <div class="CreateVariantComponents">
                                     <div class="CreateVariantComponentsRow row">
                                         <div class="CreateVariantComponentsCol col">
-                                            <input type="text" class="form-control" placeholder="Material" aria-label="Material" required>
+                                            <input type="text" class="form-control" placeholder="Material/Design/Patterns" aria-label="Material" formControlName="designs" >
                                         </div>
                                         <div class="CreateColor col">
-                                            <input type="text" class="form-control" placeholder="Color" aria-label="Color" required>
+                                            <input type="text" class="form-control" placeholder="Color" aria-label="Color" formControlName="colors" >
                                         </div>
                                         <div class="col">
-                                            <input type="text" class="form-control" placeholder="Sizes" aria-label="Sizes" required>
+                                            <input type="text" class="form-control" placeholder="Sizes" aria-label="Sizes" formControlName="sizes">
                                         </div>
                                     </div>
-                                    <div class="CreateVariantComponentsRow row">
+                                    <!-- <div class="CreateVariantComponentsRow row">
                                         <div class="CreateVariantComponentsCol col">
                                             <input type="text" class="form-control" placeholder="Others" aria-label="others" required>
                                         </div>
@@ -98,10 +98,10 @@
                                         <div class="col">
                                             <input type="text" class="form-control" placeholder="Others" aria-label="others" required>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="CreateVariantComponentsRow row">
                                         <div class="CreateVariantComponentsCol col">
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example" formControlName="category">
                                                 <option selected>Category</option>
                                                 <option value="1">Tops</option>
                                                 <option value="2">Pants</option>
@@ -117,6 +117,7 @@
                             </div>
                       </div>
                     </div>
+
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
@@ -128,12 +129,30 @@
                             <div class="CreatePricing">
                                 <div class="CreatePricing">
                                     <span> To start selling, all you need is a title, price, and image. </span>
-                                    <input type="number" class="form-control" placeholder="₱₱₱" aria-label="Material" required>
+                                    <input type="number" class="form-control" placeholder="₱₱₱" aria-label="Material" formControlName="price" required>
                                 </div>
                             </div>
                         </div>
                       </div>
                     </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                            Stocks
+                          </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                          <div class="accordion-body">
+                              <div class="CreatePricing">
+                                  <div class="CreatePricing">
+                                      <span> Product availability </span>
+                                      <input type="number" class="form-control"  aria-label="Material" formControlName="stocks" required>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
 
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -145,24 +164,40 @@
                             <div class="accordion-body">
                                 <div class="CreateMedia">
                                     <div class="CreateMedia">
-                                        <span> Add up to 10 images to your product. <br>
-                                          Used to represent your product during checkout, social sharing and more. </span>
-                                          <form class="form">
-                                              <div class="file-upload-wrapper" data-text="Select your file!">
-                                                  <label id="largeFile" for="file">
-                                                      <input type="file" id="file" />
-                                                  </label>
-                                                  
-                                              </div>
-                                            </form>
+                                        <h6> Upload Product Variation <br>
+                                         Please put all variations on a single image.</h6>
+                                         <div class="file-upload-wrapper" data-text="Select your file!">
+                                            <label id="largeFile" >
+                                                <input type="file" id="file" (change)="onChange($event, 'thumbnail')" accept="image/*">
+                                                
+                                            </label>
+                                            
+                                        </div>
                                     </div>
+
+                                    <div class="CreateMedia">
+                                        <h6> Upload Product Thumbnail <br>
+                                         Single product. To be used for Thumbnail</h6>
+                                         <div class="file-upload-wrapper" data-text="Select your file!">
+                                            <label id="largeFile" >
+                                                <input type="file" id="file"  (change)="onChange($event, 'image')" accept="image/*">
+                                            </label>
+                                            
+                                        </div>
+                                    </div>
+
+                                    
                         </div>
+
+                   
                       </div>
                   </div>
             </div>
+
         </div>
     </div>
-</div>
+</div> 
+</form>
 </main>
    
 
