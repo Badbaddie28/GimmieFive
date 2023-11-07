@@ -25,6 +25,7 @@ import { CompleteComponent } from './client/admin/complete/complete.component';
 import { PendingComponent } from './client/admin/pending/pending.component';
 import { CancelledComponent } from './client/admin/cancelled/cancelled.component';
 import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.component';
+import { AdminHeaderComponent } from './client/admin/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.comp
     CompleteComponent,
     PendingComponent,
     CancelledComponent,
-    OrderstatusComponent
+    OrderstatusComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
