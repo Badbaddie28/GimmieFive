@@ -19,6 +19,7 @@ import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.comp
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  {path:'home', component:HomeComponent},
  {path: 'login', component: LoginComponent},
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },

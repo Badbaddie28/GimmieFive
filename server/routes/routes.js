@@ -249,7 +249,6 @@ router.post('/create', async (req, res) => {
   let image = req.body.image
   let thumbnail = req.body.thumbnail
 
-
   const product = new Product({
       title:title,
       description:description,
@@ -269,6 +268,18 @@ router.post('/create', async (req, res) => {
 }
 
 );
+
+//Get All Products
+
+router.get('/getproducts', async (req, res) => {
+  try {
+    const product = await Product.find({});
+    res.send(product);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+
+}  );
 
 
 

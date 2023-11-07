@@ -6,178 +6,21 @@
             <div class="ListProductsHero">
                 <h1> List of Products</h1>  
                 <div class="ListProductsCardRow mt-5"> 
-                    <div class="ListProductCol col-2">
+                    <div class="ListProductCol col-2" *ngFor="let ProductItem of ProductArray">
                         <div class="card" style="width: 14rem;">
                             <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text">Sample Title</p>
+                            <p class="card-text">{{ProductItem.title}}</p>
                             <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
+                                    <p> {{ProductItem.stocks}}</p>
+                          
+                                <button type="button" class="btn btn-outline-dark w-75">Edit</button> 
                         </div>
                     </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
                     </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="ListProductsCardRow mt-5"> 
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ListProductCol col-2">
-                        <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <p class="card-text">Sample Title</p>
-                            <span> Remaining Stocks: </span>
-                                    <p> 12</p>
-                            <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div> 
-            <div class="ListProductsCardRow mt-5"> 
-                <div class="ListProductCol col-2">
-                    <div class="card" style="width: 14rem;">
-                        <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">Sample Title</p>
-                        <span> Remaining Stocks: </span>
-                                <p> 12</p>
-                        <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ListProductCol col-2">
-                    <div class="card" style="width: 14rem;">
-                        <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">Sample Title</p>
-                        <span> Remaining Stocks: </span>
-                                <p> 12</p>
-                        <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ListProductCol col-2">
-                    <div class="card" style="width: 14rem;">
-                        <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">Sample Title</p>
-                        <span> Remaining Stocks: </span>
-                                <p> 12</p>
-                        <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ListProductCol col-2">
-                    <div class="card" style="width: 14rem;">
-                        <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">Sample Title</p>
-                        <span> Remaining Stocks: </span>
-                                <p> 12</p>
-                        <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ListProductCol col-2">
-                    <div class="card" style="width: 14rem;">
-                        <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">Sample Title</p>
-                        <span> Remaining Stocks: </span>
-                                <p> 12</p>
-                        <a href="/product-list-edit"> <button type="button" class="btn btn-outline-dark w-75">Edit</button> </a>
-                        </div>
-                    </div>
-                </div>
             </div>
             </div> 
+        </div>
     </main>
 </body>
 <footer class="CreditContainer">
