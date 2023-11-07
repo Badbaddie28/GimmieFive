@@ -18,6 +18,13 @@ import { HeaderComponent } from './client/user/header/header.component';
 import { CreateProductComponent } from './client/admin/create-product/create-product.component';
 import { VariantProductComponent } from './client/admin/variant-product/variant-product.component';
 import { InformationProductComponent } from './client/admin/information-product/information-product.component';
+import { DashboardComponent } from './client/admin/dashboard/dashboard.component';
+import { ProductListComponent } from './client/admin/product-list/product-list.component';
+import { ProductListEditComponent } from './client/admin/product-list-edit/product-list-edit.component';
+import { CompleteComponent } from './client/admin/complete/complete.component';
+import { PendingComponent } from './client/admin/pending/pending.component';
+import { CancelledComponent } from './client/admin/cancelled/cancelled.component';
+import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,14 @@ import { InformationProductComponent } from './client/admin/information-product/
     HeaderComponent,
     CreateProductComponent,
     VariantProductComponent,
-    InformationProductComponent
+    InformationProductComponent,
+    DashboardComponent,
+    ProductListComponent,
+    ProductListEditComponent,
+    CompleteComponent,
+    PendingComponent,
+    CancelledComponent,
+    OrderstatusComponent
   ],
   imports: [
     BrowserModule,
