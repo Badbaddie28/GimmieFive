@@ -8,37 +8,54 @@
                     <img src="../../../../assets/model.png" width="403.5px" height="507px" >
                 </div>
                 <div class="RegisterForm col-6">
+                  <form [formGroup]="form"(submit)="submit()"> 
                     <h1> Create Account </h1>
                     <div class="RegisterName">
-                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
-                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name" formControlName="firstName">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name" formControlName="lastName">
                     </div>
                     <div class="RegisterAddress">
-                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="House Number">
-                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Street">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="House Number" formControlName="houseNo" >
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Street" formControlName="street">
                       </div>
                       <div class="RegisterAddress2">
-                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Baranggay">
-                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="City">
-                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Province">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Baranggay/Subdivision" formControlName="baranggay">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="City" formControlName="city">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Province/Region" formControlName="province">
                       </div>
                       <div class="RegisterNumber">
-                        <input type="number" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Postal Code">
-                        <input type="number" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Number">
+                        <input type="text" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Zip Code" formControlName="zip">
+                        <input type="number" class="form-control w-50" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Number" formControlName="contactNum">
                       </div>
                       <div class="form-group">
+                        <div class="input-group" id="">
+                            <input class="form-control" type="email" placeholder="Email" formControlName="email">
+                            <div class="input-group-addon">
+                            </div>
+                        </div>
+                    </div>
+                      <div class="form-group">
                         <div class="input-group" id="show_hide_password">
-                            <input class="form-control" type="password" placeholder="Password">
+                            <input class="form-control" type="password" placeholder="Password" formControlName="password">
                             <div class="input-group-addon">
                                 <i class="fa fa-eye-slash" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                      <div class="input-group" id="show_hide_password">
+                          <input class="form-control" type="password" placeholder="Confirm Password" formControlName="cpassword">
+                          <div class="input-group-addon">
+                              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                          </div>
+                      </div>
+                  </div>
                     
                     
                     
 
-                    <button type="button" class="Registerbutton btn btn-primary mt-3">Register Now</button>   
+                    <button type="submit" class="Registerbutton btn btn-primary mt-3">Register Now</button>   
                     <div class="SignInReminder">
                         <label for="Reminder"> Already Have An Account?
                             <a class="nav-link" href="../HTML/login.html"> Sign In!</a>
@@ -55,7 +72,7 @@
                         <span> By clicking 'Register Now' you agree to <a href="#" data-bs-toggle="modal" data-bs-target="#termsAndConditionsModal"> Terms & Conditions </a>  and <a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a>   </span>
                         
                     </div>
-                    
+                  </form>
                     </div>
 
         </div>     

@@ -64,13 +64,14 @@ router.post('/register', async (req, res) => {
     let lastName = req.body.lastName
     let email = req.body.email
     let password = req.body.password
+    let userType = req.body.userType
+    let contactNum = req.body.contactNum
     let houseNo = req.body.houseNo
     let street = req.body.street
     let baranggay = req.body.baranggay
     let city = req.body.city
     let province = req.body.province
     let zip = req.body.zip
-    let userType = req.body.userType
 
 
 
@@ -97,13 +98,14 @@ router.post('/register', async (req, res) => {
         lastName:lastName,
         email:email,
         password:hashedPassword,
+        userType:userType,
+        contactNum: contactNum,
          houseNo : houseNo,
          street : street,
          baranggay : baranggay,
          city : city,
          province : province,
          zip : zip,
-         userType:userType,
         })
 
     const result = await customer.save();
@@ -128,14 +130,14 @@ router.post('/register', async (req, res) => {
 //LOGIN
 
 router.post('/login', async (req, res) => {
-    const customer = await Customer.findOne({email:req.body.email});
-    const admin = await Admin.findOne({email:req.body.email});
+    const customer = await Customer.findOne({email:req.body.email})
+    const admin = await Admin.findOne({email:req.body.email})
 
     if(!customer){
 
         if(!admin){ 
             return res.status(404).send({
-            message:"User Not Found"
+            message:"User Not Found!!!"
           })}
 
           else if (!(await bcrypt.compare(req.body.password, admin.password))){ 
@@ -171,16 +173,18 @@ router.post('/login', async (req, res) => {
 
     else {const token = jwt.sign({
         _id: customer._id, 
+        userType:customer.userType,
         email: customer.email,
         firstName: customer.firstName,
         lastName: customer.lastName,
+        contactNum: customer.contactNum,
         houseNo: customer.houseNo, 
         street: customer.street,
         baranggay: customer.baranggay,
         city: customer.city,
         province: customer.province,
         zip: customer.zip,
-        userType:customer.userType,
+        
 
       },"secret") //but this if valid
     
@@ -217,7 +221,7 @@ router.get('/current', async (req, res) => {
    
       if (!user) {
           return res.status(404).send({
-              message: "User not found"
+              message: "User not found!"
           });
       }
 

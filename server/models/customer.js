@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const memberSchema = new mongoose.Schema ({
+const customerSchema = new mongoose.Schema ({
 
     firstName:{
         type: String,
@@ -19,6 +19,12 @@ const memberSchema = new mongoose.Schema ({
         type: String,
         required: true
     },
+
+    contactNum:{
+        type: String,
+        required: true
+    },
+
     houseNo:{
         type: String,
         required: true
@@ -32,10 +38,10 @@ const memberSchema = new mongoose.Schema ({
     },
     city:{
         type: String,
+
     },
     province:{
         type: String,
-        required: true
     },
     zip:{
         type: String,
@@ -43,7 +49,7 @@ const memberSchema = new mongoose.Schema ({
     },
 
     userType:{
-        type: Date,
+        type: String,
         default : "customer",
     },
     
@@ -53,4 +59,4 @@ const memberSchema = new mongoose.Schema ({
     }
 })
 
-module.exports = mongoose.model("Customer", memberSchema)
+module.exports = mongoose.model("Customer", customerSchema)
