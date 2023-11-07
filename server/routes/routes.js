@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Customer = require('../models/customer')
 const Admin = require('../models/admin')
+const Product = require('../models/product')
 
 
 
@@ -15,7 +16,7 @@ router.post('/admin', async (req, res) => {
     let firstName = req.body.firstName
     let lastName = req.body.lastName
     let email = req.body.email
-    let password = req.body.password
+    let size = req.body.password
     let userType = req.body.userType
   
   
@@ -233,6 +234,42 @@ router.get('/current', async (req, res) => {
       });
   }
 });
+
+
+// CREATE PRODUCT
+router.post('/create', async (req, res) => {
+  let title = req.body.title
+  let description = req.body.description
+  let colors = req.body.colors
+  let sizes = req.body.sizes
+  let designs = req.body.designs
+  let price = req.body.price
+  let stocks = req.body.stocks
+  let category = req.body.category
+  let image = req.body.image
+  let thumbnail = req.body.thumbnail
+
+
+  const product = new Product({
+      title:title,
+      description:description,
+      colors:colors,
+      sizes: sizes,
+      designs:designs,
+      price:price,
+      stocks:stocks,
+      category:category,
+      image:image,
+      thumbnail:thumbnail,
+
+  })
+
+  const result = await product.save();
+  res.status(201).json({ message: 'product created successfully' });
+}
+
+);
+
 
 
 
