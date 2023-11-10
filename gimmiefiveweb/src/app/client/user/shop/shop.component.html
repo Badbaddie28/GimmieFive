@@ -7,7 +7,8 @@
                 <div class="CollectionFirstLayer"> 
                     <div class="CollectionSeller">
                         <h1> New Products </h1>
-                        <div class="HomeSecondLayer row">
+
+                        <div class="HomeSecondLayer row" *ngFor="let newest of NewestArray">
                             <div class="SecondLayer col-3">
                                 <div class="product-container">
                                     <img src="../../../../assets/model2.png" routerLink="/product" width="282px" height="370px" >
@@ -16,54 +17,11 @@
                                         </button>
                                 </div>
                                 <div class="pricecontainer">  
-                                    <h3 class="producttitle"> Lorem Ipsum </h3>
-                                    <h3 class="productprice "> PHP 180 </h3>
+                                    <h3 class="producttitle"> {{newest.title}} </h3>
+                                    <h3 class="productprice "> {{newest.price}} </h3>
                                 </div>
-                            <span> Lorem Ipsum Dolor</span>
                             </div>
-                
-                            
-                            <div class="SecondLayer col-3">
-                                <div class="product-container">
-                                    <img src="../../../../assets/model2.png"  width="282px" height="370px" >
-                                        <button class="favorite-button">
-                                            <i class="fa fa-heart-o"></i> 
-                                        </button>
-                                </div>
-                                <div class="pricecontainer">  
-                                    <h3 class="producttitle"> Lorem Ipsum </h3>
-                                    <h3 class="productprice "> PHP 180 </h3>
-                                </div>
-                            <span> Lorem Ipsum Dolor</span>
-                            </div>
-                
-                            <div class="SecondLayer col-3">
-                              <div class="product-container">
-                                    <img src="../../../../assets/model2.png"  width="282px" height="370px" >
-                                        <button class="favorite-button">
-                                            <i class="fa fa-heart-o"></i> 
-                                        </button>
-                                </div>
-                                <div class="pricecontainer">  
-                                    <h3 class="producttitle"> Lorem Ipsum </h3>
-                                    <h3 class="productprice "> PHP 180 </h3>
-                                </div>
-                            <span> Lorem Ipsum Dolor</span>
-                            </div>
-                
-                            <div class="SecondLayer col-3">
-                                <div class="product-container">
-                                    <img src="../../../../assets/model2.png"  width="282px" height="370px" >
-                                        <button class="favorite-button">
-                                            <i class="fa fa-heart-o"></i> 
-                                        </button>
-                                </div>
-                                <div class="pricecontainer">  
-                                    <h3 class="producttitle"> Lorem Ipsum </h3>
-                                    <h3 class="productprice "> PHP 200 </h3>
-                                </div>
-                            <span> Lorem Ipsum Dolor</span>
-                            </div>
+        
                             
                         </div>
                     </div>   
