@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema ({
         type: [String]
     },
     stocks:{
-        type: String,
+        type: Number,
         required: true
     },
     price:{

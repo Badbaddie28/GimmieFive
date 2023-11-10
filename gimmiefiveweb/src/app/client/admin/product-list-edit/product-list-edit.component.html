@@ -7,7 +7,7 @@
                 <div class="CreateHero">
                     <div class="CreateFirstLayer">
                         <div class="CreatePublishButton">
-                            <button type="submit" class="btn btn-success">Publish Button</button>
+                            <button type="submit" class="btn btn-success">Publish</button>
                         </div>
                     </div>
                     <div class="CreateSecondLayer">
@@ -167,8 +167,20 @@
                                             <h6> Upload Product Variation <br>
                                              Please put all variations on a single image.</h6>
                                              <div class="file-upload-wrapper" data-text="Select your file!">
-                                                <label id="largeFile" for="file">
-                                                    <input type="file" id="file" formControlName="image">
+                                                <label id="largeFile" >
+                                                    <input type="file" id="file" (change)="onChange($event, 'thumbnail')" accept="image/*">
+                                                    
+                                                </label>
+                                                
+                                            </div>
+                                        </div>
+    
+                                        <div class="CreateMedia">
+                                            <h6> Upload Product Thumbnail <br>
+                                             Single product. To be used for Thumbnail</h6>
+                                             <div class="file-upload-wrapper" data-text="Select your file!">
+                                                <label id="largeFile" >
+                                                    <input type="file" id="file"  (change)="onChange($event, 'image')" accept="image/*">
                                                 </label>
                                                 
                                             </div>
@@ -177,20 +189,7 @@
                                         
                             </div>
     
-                            <div class="CreateMedia">
-                                <div class="CreateMedia">
-                                    <h6> Upload Product Thumbnail <br>
-                                     Single product. To be used for Thumbnail</h6>
-                                     <div class="file-upload-wrapper" data-text="Select your file!">
-                                        <label id="largeFile" for="file">
-                                            <input type="file" id="file" formControlName="thumbnail">
-                                        </label>
-                                        
-                                    </div>
-                                </div>
-    
-                                
-                    </div>
+                       
                           </div>
                       </div>
                 </div>

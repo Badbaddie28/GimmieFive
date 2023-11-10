@@ -295,6 +295,78 @@ router.get('/product/:id', async (req, res) => {
   }
 });
 
+router.patch('/product/:id', async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const body = req.body;
+    const product = await Product.findByIdAndUpdate(_id,body);
+    if (!product) {
+      return res.status(404).send({ error: ' not found' });
+    }
+    res.send(product);
+  } catch (error) {
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+
+
+router.get('/getproducts/:category', async (req, res) => {
+  try {
+    const category = req.params.category;
+    const product = await Product.find({ category: category });
+    if (!product || product.length === 0) {
+      return res.status(404).send({ error: 'Product not found' });
+    }
+    res.send(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+router.get('/getproducts/price/ascending', async (req, res) => {
+  try {
+    const product = await Product.find().sort({price:1});
+    if (!product || product.length === 0) {
+      return res.status(404).send({ error: 'Product not found' });
+    }
+    res.send(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+router.get('/getproducts/price/descending', async (req, res) => {
+  try {
+    const product = await Product.find().sort({price:-1});
+    if (!product || product.length === 0) {
+      return res.status(404).send({ error: 'Product not found' });
+    }
+    res.send(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+router.get('/colors', async (req, res) => {
+  try {
+    const product = await Product.find({colors});
+    if (!product || product.length === 0) {
+      return res.status(404).send({ error: 'Colors not found' });
+    }
+    res.send(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+
+
+
 
 
 module.exports = router
