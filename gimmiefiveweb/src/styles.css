@@ -1385,6 +1385,14 @@ hr{
     margin-bottom: 1rem;
 }
 
+.CreateVariantComponentsRow input{
+    text-transform: uppercase;
+}
+
+.CreateVariantComponentsRow ::placeholder{
+text-transform: capitalize;
+}
+
 .CreateVariantComponentsRow select{
     margin-top: 1rem;
     background-color: #F9FAFB  !important;
