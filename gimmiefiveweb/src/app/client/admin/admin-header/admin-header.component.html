@@ -1,28 +1,28 @@
 <header>
     <div class= "HeaderContainer navbar navbar-expand-lg">
-        <div class="BrandTitle container-fluid col-5">
+        <div class="BrandTitle container-fluid col-4">
             <a class="navbar-brand" routerLink="/home">Gimmie Five</a>
         </div>
 
-        <div class="BrandLinks container-fluid col-4">
-
+        <div class="BrandLinks container-fluid col-7">
             <a class="nav-link" routerLink="/home">Home</a>
             <a class="nav-link" routerLink="/shop">Shop</a>
             <a class="nav-link" routerLink="/login">Login</a>
-            <a class="nav-link" routerLink="/login">Logout</a>
-            <a class="nav-link" routerLink="/orderstatus">Order Status</a>
-
-            <!-- <li class="nav-item dropdown">>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" routerLink="/Complete">Complete</a></li>
-                <li><a class="dropdown-item" routerLink="/Pending">Pending</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" routerLink="Cancelled">Cancelled</a></li>
-              </ul>
-            </li> -->
-
-
+            <a class="nav-link" routerLink="/create-product">Create</a>
+            <a class="nav-link" routerLink="/orderstatus">Order Status</a>           
+            <a class="nav-link" routerLink="/product-list">List of Products</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="/complete">Complete</a></li>
+                  <li><a class="dropdown-item" routerLink="/pending">Pending</a></li>
+                  <li><a class="dropdown-item" routerLink="/cancelled">Cancelled</a></li>
+                </ul>
+            </div>
         </div>
+
         <div class="BrandComponents container-fluid col-1 px-2">
             <a class="nav-link" routerLink="/profile">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
