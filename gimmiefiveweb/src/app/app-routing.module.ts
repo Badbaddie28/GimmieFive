@@ -17,6 +17,7 @@ import { PendingComponent } from './client/admin/pending/pending.component';
 import { CancelledComponent } from './client/admin/cancelled/cancelled.component';
 import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.component';
 import { VisitorproductComponent } from './client/user/visitorproduct/visitorproduct.component';
+import { CheckoutComponent } from './client/user/checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -37,7 +38,7 @@ const routes: Routes = [
   {path: 'pending', component:PendingComponent},
   {path: 'cancelled', component:CancelledComponent},
   {path: 'orderstatus', component:OrderstatusComponent},
-  
+  { path: 'checkout', component: CheckoutComponent },
 ];
 
 @NgModule({
