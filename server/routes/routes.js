@@ -278,9 +278,22 @@ router.get('/getproducts', async (req, res) => {
   } catch (error) {
     res.status(400).send(error);
   }
-
 }  );
 
+//Specific Product
+
+router.get('/product/:id', async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const product = await Product.findById(_id);
+    if (!product) {
+      return res.status(404).send({ error: 'Organization not found' });
+    }
+    res.send(product);
+  } catch (error) {
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
 
 
 
