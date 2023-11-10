@@ -21,6 +21,8 @@ export class ShopComponent {
   thumbnail= "";
   stocks= "";
 
+  NewestArray  : any[]=[];
+
   CategoryArray : String[] =['Tops','Pants','Dress','Jeans','Accessories','Shoes']
 
   
@@ -28,6 +30,7 @@ export class ShopComponent {
     private router: Router,
     ){
     this.getAllProducts();
+    this.newest();
 
   }
 
@@ -51,8 +54,6 @@ export class ShopComponent {
         console.error(error);
       });
   }
-
-  
   
   ascending() {
     this.http.get('http://localhost:5000/api/getproducts/price/ascending')
@@ -74,9 +75,17 @@ export class ShopComponent {
       });
   }
 
-
-
+  newest(){
+    this.http.get('http://localhost:5000/api/newest')
+    .subscribe((newest: any) => {
+      console.log(newest);
+      this.NewestArray = newest;
+    }, error => {
+      console.error(error);
+    });
+}
+  }
 
   
 
-}
+

@@ -235,6 +235,15 @@ router.get('/current', async (req, res) => {
   }
 });
 
+//LOGOUT
+router.post('/logout', (req,res) =>{
+  res.cookie("jwt", "", {maxAge:0})
+
+  res.send({
+    message:"success"
+  });
+});
+
 
 // CREATE PRODUCT
 router.post('/create', async (req, res) => {
@@ -363,6 +372,21 @@ router.get('/colors', async (req, res) => {
     res.status(500).send({ error: 'Internal Server Error' });
   }
 });
+
+router.get('/newest', async (req, res) => {
+  try {
+    const product = await Product.find().sort({dateCreated:-1}).limit(4);
+    if (!product || product.length === 0) {
+      return res.status(404).send({ error: 'Products not found' });
+    }
+    res.send(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+
 
 
 
