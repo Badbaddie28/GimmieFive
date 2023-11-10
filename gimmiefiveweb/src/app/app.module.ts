@@ -27,6 +27,9 @@ import { CancelledComponent } from './client/admin/cancelled/cancelled.component
 import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.component';
 import { AdminHeaderComponent } from './client/admin/admin-header/admin-header.component';
 import { TestComponent } from './client/user/test/test.component';
+import { VisitorproductComponent } from './client/user/visitorproduct/visitorproduct.component';
+import { CheckoutComponent } from './client/user/checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { TestComponent } from './client/user/test/test.component';
     CancelledComponent,
     OrderstatusComponent,
     AdminHeaderComponent,
-    TestComponent
+    TestComponent,
+    VisitorproductComponent,
+    CheckoutComponent,
+  
   ],
   imports: [
     BrowserModule,
