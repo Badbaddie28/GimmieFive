@@ -6,7 +6,7 @@
             <div class="CollectionHero">
                 <div class="CollectionFirstLayer"> 
                     <div class="CollectionSeller">
-                        <h1> Best Sellers </h1>
+                        <h1> New Products </h1>
                         <div class="HomeSecondLayer row">
                             <div class="SecondLayer col-3">
                                 <div class="product-container">
@@ -80,28 +80,29 @@
                         </div>
                         <div class="CollectionTypes">
                             <div class="ByTypes">
-                                <span> Tops </span>
-                                <button> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>  
+                              <span> Tops </span>
+                              <button (click)="thisCategory(CategoryArray[0])"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>  
                             </div>
                             <div class="ByTypes">
-                                <span> Pants </span>
-                                <button> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
-                            </div>
+                              <span> Pants </span>
+                              <button (click)="thisCategory(CategoryArray[1])"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
+                            </div>                         
+                          
                             <div class="ByTypes">
                                 <span> Dress </span>
-                                <button> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
+                                <button (click)="thisCategory(CategoryArray[2])"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
                             </div>
                             <div class="ByTypes">
                                 <span> Jeans </span>
-                                <button> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
+                                <button (click)="thisCategory(CategoryArray[3])"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
                             </div>
                             <div class="ByTypes">
                                 <span> Accessories </span>
-                                <button> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
+                                <button (click)="thisCategory(CategoryArray[4])"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
                             </div>
                             <div class="ByTypes">
                                 <span> Shoes </span>
-                                <button> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
+                                <button (click)="thisCategory(CategoryArray[5])"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
                             </div>
                         </div>
                         <div class="CollectionPrice">
@@ -109,14 +110,14 @@
                         </div>
                         <div class="CollectionPriceButton">
                             <div class="CollectionPriceUp">
-                                <a href="#">
-                                    <button><span> Ascending </span><i class="fa fa-long-arrow-up" aria-hidden="true"></i></button>
-                                </a>
+                                
+                                    <button (click)="ascending()"><span> Ascending </span><i class="fa fa-long-arrow-up" aria-hidden="true"></i></button>
+                                
                             </div>
                             <div class="CollectionPriceDown">
-                                <a href="#">
-                                    <button><span> Descending </span><i class="fa fa-long-arrow-down" aria-hidden="true"></i></button>
-                                </a>
+                              
+                                    <button (click)="descending()"><span> Descending </span><i class="fa fa-long-arrow-down" aria-hidden="true"></i></button>
+                                
                             </div>
                         </div>
                         <div class="CollectionColorTitle">
@@ -229,111 +230,27 @@
             <div class="CollectionThirdHero">
                 <div class="CollectionThirdLayer">
                     <div class="CollectionThirdTitle">
-                        <h2> Tops </h2>
-                    </div>
-                    <div class="CollectionThirdSubTitle">
-                        <a href="#"> <span> New </span> </a>
-                        <a href="#"> <span> Recommended </span> </a>
-                    </div>
+                        <h2 *ngIf="ProductArray.length === 1">{{ ProductArray[0].category }}</h2>
+                        <h2 *ngIf="ProductArray.length > 1">All/Ascending</h2>
+                    
+                      </div>
+                      
                     
                 </div>
-                <div class="CollectionFourthLayer">
-                    <div class="CollectionImageContainer">
-                        <div class="CollectionImageRow row">
-                            <div class="CollectionImageCol col-4">
+                <div  >
+                    <div class="CollectionImageContainer" >
+                        <div class="CollectionImageRow row" >
+                            <div class="CollectionImageCol col-4" class="CollectionFourthLayer" *ngFor="let ProductItem of ProductArray">
                                     <div class="CollectionImage-Container">
                                         <img src="../../../../assets/model2.png"  width="250px" height="320px" >
                                     </div>
                                     <div class="collectionpricecontainer">  
-                                        <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                        <h3 class="collectionproductprice "> PHP 180 </h3>
+                                        <h3 class="collectionproducttitle"> {{ProductItem.title}} </h3>
+                                        <h3 class="collectionproductprice ">P{{ProductItem.price}} </h3>
                                     </div>
-                                <span> Lorem Ipsum Dolor</span>
+                                
                             </div>
-                            <div class="CollectionImageCol col-4">
-                                <div class="CollectionImage-Container">
-                                    <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                                </div>
-                                <div class="collectionpricecontainer">  
-                                    <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                    <h3 class="collectionproductprice "> PHP 180 </h3>
-                                </div>
-                            <span> Lorem Ipsum Dolor</span>
-                        </div>
-                        <div class="CollectionImageCol col-4">
-                            <div class="CollectionImage-Container">
-                                <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                            </div>
-                            <div class="collectionpricecontainer">  
-                                <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                <h3 class="collectionproductprice "> PHP 180 </h3>
-                            </div>
-                        <span> Lorem Ipsum Dolor</span>
-                    </div>   
-                        </div>
-                        <div class="CollectionImageRow row mt-4">
-                            <div class="CollectionImageCol col-4">
-                                    <div class="CollectionImage-Container">
-                                        <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                                    </div>
-                                    <div class="collectionpricecontainer">  
-                                        <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                        <h3 class="collectionproductprice "> PHP 180 </h3>
-                                    </div>
-                                <span> Lorem Ipsum Dolor</span>
-                            </div>
-                            <div class="CollectionImageCol col-4">
-                                <div class="CollectionImage-Container">
-                                    <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                                </div>
-                                <div class="collectionpricecontainer">  
-                                    <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                    <h3 class="collectionproductprice "> PHP 180 </h3>
-                                </div>
-                            <span> Lorem Ipsum Dolor</span>
-                        </div>
-                        <div class="CollectionImageCol col-4">
-                            <div class="CollectionImage-Container">
-                                <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                            </div>
-                            <div class="collectionpricecontainer">  
-                                <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                <h3 class="collectionproductprice "> PHP 180 </h3>
-                            </div>
-                        <span> Lorem Ipsum Dolor</span>
-                    </div>   
-                        </div>
-                        <div class="CollectionImageRow row mt-4">
-                            <div class="CollectionImageCol col-4">
-                                    <div class="CollectionImage-Container">
-                                        <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                                    </div>
-                                    <div class="collectionpricecontainer">  
-                                        <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                        <h3 class="collectionproductprice "> PHP 180 </h3>
-                                    </div>
-                                <span> Lorem Ipsum Dolor</span>
-                            </div>
-                            <div class="CollectionImageCol col-4">
-                                <div class="CollectionImage-Container">
-                                    <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                                </div>
-                                <div class="collectionpricecontainer">  
-                                    <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                    <h3 class="collectionproductprice "> PHP 180 </h3>
-                                </div>
-                            <span> Lorem Ipsum Dolor</span>
-                        </div>
-                        <div class="CollectionImageCol col-4 ">
-                            <div class="CollectionImage-Container">
-                                <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                            </div>
-                            <div class="collectionpricecontainer">  
-                                <h3 class="collectionproducttitle"> Lorem Ipsum </h3>
-                                <h3 class="collectionproductprice "> PHP 180 </h3>
-                            </div>
-                        <span> Lorem Ipsum Dolor</span>
-                    </div>   
+
                         </div>
                     </div>
                 </div>
