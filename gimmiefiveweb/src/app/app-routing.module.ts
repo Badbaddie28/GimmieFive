@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: 'create-product', component:CreateProductComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path: 'product-list', component:ProductListComponent},
-  {path: 'product-list-edit', component:ProductListEditComponent},
+  {path: 'product-list-edit/:id', component:ProductListEditComponent},
   {path: 'complete', component:CompleteComponent},
   {path: 'pending', component:PendingComponent},
   {path: 'cancelled', component:CancelledComponent},

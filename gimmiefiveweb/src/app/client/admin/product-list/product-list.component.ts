@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -21,7 +22,9 @@ export class ProductListComponent {
   stocks= "";
 
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient,
+    private router: Router,
+    ){
     this.getAllMember();
   }
 
@@ -32,6 +35,10 @@ export class ProductListComponent {
       console.log(resultData);
       this.ProductArray = resultData;
     })
+  }
+
+  redirectToOrgProfile(_id: string) {
+    this.router.navigate(['/product-list-edit', _id]);
   }
 
 }
