@@ -16,12 +16,14 @@ import { CompleteComponent } from './client/admin/complete/complete.component';
 import { PendingComponent } from './client/admin/pending/pending.component';
 import { CancelledComponent } from './client/admin/cancelled/cancelled.component';
 import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.component';
+import { VisitorproductComponent } from './client/user/visitorproduct/visitorproduct.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   {path:'home', component:HomeComponent},
- {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   { path: 'product', component: ProductComponent },
+  { path: 'visitor-product', component: VisitorproductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'shop', component: ShopComponent},
   { path: 'contacts', component: ContactusComponent},
