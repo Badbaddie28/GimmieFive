@@ -162,34 +162,26 @@
                         </h2>
                         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
                             <div class="accordion-body">
-                                <div class="CreateMedia">
+                                <div class="CreateMediaContainer">
                                     <div class="CreateMedia">
                                         <h6> Upload Product Variation <br>
                                          Please put all variations on a single image.</h6>
-                                         <div class="file-upload-wrapper" data-text="Select your file!">
+                                         <div class="file-upload-wrapper " data-text="Select your file!">
                                             <label id="largeFile" >
                                                 <input type="file" id="file" (change)="onChange($event, 'thumbnail')" accept="image/*">
                                                 
-                                            </label>
-                                            
+                                            </label>     
                                         </div>
-                                    </div>
-
-                                    <div class="CreateMedia">
-                                        <h6> Upload Product Thumbnail <br>
-                                         Single product. To be used for Thumbnail</h6>
-                                         <div class="file-upload-wrapper" data-text="Select your file!">
-                                            <label id="largeFile" >
-                                                <input type="file" id="file"  (change)="onChange($event, 'image')" accept="image/*">
-                                            </label>
-                                            
+                                        <div class="CreateMedia">
+                                             <div class="file-upload-wrapper mt-5" data-text="Select your file!">
+                                                <label id="largeFile" >
+                                                    <input type="file" id="file"  (change)="onChange($event, 'image')" accept="image/*">
+                                                </label>
+                                                
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    
+                                    </div> 
                         </div>
-
-                   
                       </div>
                   </div>
             </div>

@@ -1427,6 +1427,10 @@ label#largeFile:after {
     width: 0px;
     height: 0px;
   }
+
+  .CreateMediaContainer{
+    margin-bottom: 10rem;
+  }
   
 
   /* Profile */
