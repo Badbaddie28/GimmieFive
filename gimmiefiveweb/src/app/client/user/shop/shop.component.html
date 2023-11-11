@@ -8,28 +8,16 @@
                     <div class="CollectionSeller">
                         <h1> New Products </h1>
 
-                        <div class="HomeSecondLayer row" *ngFor="let newest of NewestArray">
-                            <div class="SecondLayer col-3">
-                                <div class="product-container">
-                                    <img src="../../../../assets/model2.png" routerLink="/product" width="282px" height="370px" >
-                                        <button class="favorite-button">
-                                            <i class="fa fa-heart-o"></i> 
-                                        </button>
-                                </div>
-                                <div class="pricecontainer">  
-                                    <h3 class="producttitle"> {{newest.title}} </h3>
-                                    <h3 class="productprice "> {{newest.price}} </h3>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-3d-flex">
+                        <div class="HomeSecondLayer row" >
+                        
+                            <div class="col-lg-3 col-md-3 col-sm-3d-flex" *ngFor="let newest of NewestArray">
                                 <div class="card my-2 shadow-2-strong">
                                     <img src="../../../../assets/model2.png"  >
                                     <div class="card-body d-flex flex-column">
-                                    <h5 class="mb-1 me-1">PHP34.50</h5>
-                                    <p class="producttitle">T-shirts with multiple colors, for men and lady</p>
+                                    <h5 class="mb-1 me-1"> {{newest.price}} </h5>
+                                    <p class="producttitle"> {{newest.title}}</p>
                                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-                                        <a routerLink="/product" class="btn btn-primary shadow-0 me-1">View Product</a>
+                                        <button class="btn btn-primary shadow-0 me-1" (click)="redirectToProduct(newest._id)">View Product</button>
                                         <a  class="btn btn-light border icon-hover px-2 pt-2"><i class="fa fa-heart-o"></i> </a>
                                     </div>
                                     </div>
@@ -98,57 +86,57 @@
                         <div class="CollectionRow row">
                             <div class="CollectionCol col-3">
                                 <div class="CollectionColorButton">
-                                    <button class="purple"></button>
+                                    <button class="purple" (click)="thisColor(ColorArray[0])"></button>
                                     <span> Purple </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="black"></button>
+                                    <button class="black" (click)="thisColor(ColorArray[3])"></button>
                                     <span> Black </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="red"></button>
+                                    <button class="red" (click)="thisColor(ColorArray[6])"></button>
                                     <span> Red </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="orange"></button>
+                                    <button class="orange" (click)="thisColor(ColorArray[9])"></button>
                                     <span> Orange </span>
                                 </div>
                             </div>
 
                             <div class="CollectionCol2 col-3">
                                 <div class="CollectionColorButton">
-                                    <button class="navy"></button>
+                                    <button class="navy" (click)="thisColor(ColorArray[1])" ></button>
                                     <span> Navy </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="white"></button>
+                                    <button class="white" (click)="thisColor(ColorArray[4])"></button>
                                     <span> White </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="broom"></button>
-                                    <span> Broom </span>
+                                    <button class="broom" (click)="thisColor(ColorArray[7])"></button>
+                                    <span> Brown </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="green"></button>
+                                    <button class="green" (click)="thisColor(ColorArray[10])"></button>
                                     <span> Green </span>
                                 </div>
                             </div>
 
                             <div class="CollectionCol3 col-3">
                                 <div class="CollectionColorButton">
-                                    <button class="yellow"></button>
+                                    <button class="yellow" (click)="thisColor(ColorArray[2])"></button>
                                     <span> Yellow </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="gray"></button>
+                                    <button class="gray" (click)="thisColor(ColorArray[5])"></button>
                                     <span> Gray </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="pink"></button>
+                                    <button class="pink" (click)="thisColor(ColorArray[8])"></button>
                                     <span> Pink </span>
                                 </div>
                                 <div class="CollectionColorButton">
-                                    <button class="blue"></button>
+                                    <button class="blue" (click)="thisColor(ColorArray[11])"></button>
                                     <span> Blue </span>
                                 </div>
                             </div>
@@ -162,35 +150,35 @@
                     <div class="CollectionSizesContainer">
                         <div class="CollectionSizesRow1">
                             <div class="CollectionSizesButton">
-                                <button> XXS </button>
+                                <button (click)="thisSize(SizeArray[0])"> XXS </button>
                             </div>
                             <div class="CollectionSizesButton">
-                                <button> M </button>
+                                <button (click)="thisSize(SizeArray[3])"> M </button>
                             </div>
                             <div class="CollectionSizesButton">
-                                <button> XXL </button>
+                                <button (click)="thisSize(SizeArray[6])"> XXL </button>
                             </div>
                         </div>
                         <div class="CollectionSizesRow2">
                             <div class="CollectionSizesButton">
-                                <button> XS </button>
+                                <button (click)="thisSize(SizeArray[1])"> XS </button>
                             </div>
                             <div class="CollectionSizesButton">
-                                <button> L </button>
+                                <button (click)="thisSize(SizeArray[4])"> L </button>
                             </div>
                             <div class="CollectionSizesButton">
-                                <button> 3XL </button>
+                                <button (click)="thisSize(SizeArray[7])"> 3XL </button>
                             </div>
                         </div>
                         <div class="CollectionSizesRow3">
                             <div class="CollectionSizesButton">
-                                <button> S </button>
+                                <button (click)="thisSize(SizeArray[2])"> S </button>
                             </div>
                             <div class="CollectionSizesButton">
-                                <button> XL </button>
+                                <button (click)="thisSize(SizeArray[5])"> XL </button>
                             </div>
                             <div class="CollectionSizesButton">
-                                <button> 4XL </button>
+                                <button (click)="thisSize(SizeArray[8])"> 4XL </button>
                             </div>
                         </div>
                     </div>
@@ -201,39 +189,40 @@
             <div class="CollectionThirdHero">
                 <div class="CollectionThirdLayer">
                     <div class="CollectionThirdTitle">
-                        <h2 *ngIf="ProductArray.length === 1">{{ ProductArray[0].category }}</h2>
-                        <h2 *ngIf="ProductArray.length > 1">All/Ascending</h2>
+                        <!-- Display the category if all items have the same category -->
+                        <h2 *ngIf="isAllSameCategory()">{{ ProductArray[0].category }}</h2>
+                      
+                        <!-- Display the first category if not all items have the same category -->
+                        <h2 *ngIf="!isAllSameCategory()">All</h2>
+                        <h2 *ngIf="ProductArray.length === 0">No Products</h2>
+
+
+
                     
                       </div>
+                      
                       
                     
                 </div>
                 <div  >
                     <div class="CollectionImageContainer" >
                         <div class="CollectionImageRow row" >
-                            <div class="CollectionImageCol col-4" class="CollectionFourthLayer" *ngFor="let ProductItem of ProductArray">
-                                    <div class="CollectionImage-Container">
-                                        <img src="../../../../assets/model2.png"  width="250px" height="320px" >
-                                    </div>
-                                    <div class="collectionpricecontainer">  
-                                        <h3 class="collectionproducttitle"> {{ProductItem.title}} </h3>
-                                        <h3 class="collectionproductprice ">P{{ProductItem.price}} </h3>
-                                    </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 d-flex">
+                         
+                            <div class="col-lg-4 col-md-4 col-sm-4 d-flex" *ngFor="let ProductItem of ProductArray">
                                 <div class="card my-2 shadow-2-strong">
                                     <img src="../../../../assets/model2.png"  >
                                     <div class="card-body d-flex flex-column">
-                                    <h5 class="mb-1 me-1">PHP34.50</h5>
-                                    <p class="producttitle">T-shirts with multiple colors, for men and lady</p>
+                                    <h5 class="mb-1 me-1">PHP{{ProductItem.price}}</h5>
+                                    <p class="producttitle">{{ProductItem.title}}</p>
                                     <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-                                        <a routerLink="/product" class="btn btn-primary shadow-0 me-1">View Product</a>
+                                        <button  class="btn btn-primary shadow-0 me-1" (click)="redirectToProduct(ProductItem._id)">View Product</button>
                                         <a  class="btn btn-light border icon-hover px-2 pt-2"><i class="fa fa-heart-o"></i> </a>
                                     </div>
                                     </div>
                                 </div>
                             </div>
+
+                        
 
                         </div>
                     </div>

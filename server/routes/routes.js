@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 const Customer = require('../models/customer')
 const Admin = require('../models/admin')
 const Product = require('../models/product')
+const OrderForm = require('../models/orderform')
+
 
 
 
@@ -235,6 +237,31 @@ router.get('/current', async (req, res) => {
   }
 });
 
+  // TO GET DETAILS FOR LOGGED IN CUSTOMER
+  router.get('/customer', async (req, res) => {
+    try{
+      const cookie = req.cookies['jwt']
+      const claims = jwt.verify(cookie,"secret")
+
+      if(!claims){
+        return res.status(401).send({
+          message: "unauthenticated"
+        })
+      }
+
+      const customer = await Customer.findOne({_id:claims._id})
+      const {password,...data} = await customer.toJSON()
+
+      res.send(data)
+
+    }
+    catch(err){
+      return res.status(401).send({
+        message:'unauthenticated'
+      })
+    }
+});
+
 //LOGOUT
 router.post('/logout', (req,res) =>{
   res.cookie("jwt", "", {maxAge:0})
@@ -296,13 +323,15 @@ router.get('/product/:id', async (req, res) => {
     const _id = req.params.id;
     const product = await Product.findById(_id);
     if (!product) {
-      return res.status(404).send({ error: 'Organization not found' });
+      return res.status(404).send({ error: 'Product not found' });
     }
     res.send(product);
   } catch (error) {
     res.status(500).send({ error: 'Internal Server Error' });
   }
 });
+
+//Update Product
 
 router.patch('/product/:id', async (req, res) => {
   try {
@@ -319,7 +348,7 @@ router.patch('/product/:id', async (req, res) => {
 });
 
 
-
+// Sort Product by Category
 router.get('/getproducts/:category', async (req, res) => {
   try {
     const category = req.params.category;
@@ -334,6 +363,8 @@ router.get('/getproducts/:category', async (req, res) => {
   }
 });
 
+// Sort Product by Price - Ascending
+
 router.get('/getproducts/price/ascending', async (req, res) => {
   try {
     const product = await Product.find().sort({price:1});
@@ -346,6 +377,8 @@ router.get('/getproducts/price/ascending', async (req, res) => {
     res.status(500).send({ error: 'Internal Server Error' });
   }
 });
+
+// Sort Product by Price - Descending
 
 router.get('/getproducts/price/descending', async (req, res) => {
   try {
@@ -360,18 +393,40 @@ router.get('/getproducts/price/descending', async (req, res) => {
   }
 });
 
-router.get('/colors', async (req, res) => {
+// Sort Product by Color
+
+router.get('/getColor/:COLOR', async (req, res) => {
   try {
-    const product = await Product.find({colors});
-    if (!product || product.length === 0) {
-      return res.status(404).send({ error: 'Colors not found' });
-    }
+    const COLOR = req.params.COLOR;
+    console.log('Requested Color:', COLOR);
+
+    const product = await Product.find({ colors: COLOR });
+
+
     res.send(product);
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'Internal Server Error' });
   }
 });
+
+// Sort Product by Size
+
+router.get('/getSize/:SIZE', async (req, res) => {
+  try {
+    const SIZE = req.params.SIZE;
+
+    const product = await Product.find({ sizes: SIZE });
+
+
+    res.send(product);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+// Sort Product by Date
 
 router.get('/newest', async (req, res) => {
   try {
@@ -386,11 +441,65 @@ router.get('/newest', async (req, res) => {
   }
 });
 
+// Post Order
+
+router.post('/orderForm', async (req, res) => {
+  let customerID = req.body.customerID
+  let productID = req.body.productID
+  let isCheckedOut = req.body.isCheckedOut
+  let isDelivered = req.body.isDelivered
+  let isCancelled = req.body.isCancelled
+  let color = req.body.color
+  let design = req.body.design
+  let size = req.body.size
+  let quantity = req.body.quantity
+  let total = req.body.total
+  let modeOfPayment = req.body.modeOfPayment
+  let note = req.body.note
 
 
 
+  let firstName = req.body.firstName
+  let lastName = req.body.lastName
+  let contactNum = req.body.contactNum
+  let houseNo = req.body.houseNo
+  let street = req.body.street
+  let baranggay = req.body.baranggay
+  let city = req.body.city
+  let province = req.body.province
+  let zip = req.body.zip
 
+  const orderform = new OrderForm({
+      customerID:customerID,
+      productID:productID,
+      isCheckedOut:isCheckedOut,
+      isDelivered: isDelivered,
+      isCancelled:isCancelled,
+      color:color,
+      design:design,
+      size:size,
+      quantity:quantity,
+      total:total,
+      modeOfPayment:modeOfPayment,
+      note:note,
 
+      firstName:firstName,
+      lastName:lastName,
+      contactNum: contactNum,
+       houseNo : houseNo,
+       street : street,
+       baranggay : baranggay,
+       city : city,
+       province : province,
+       zip : zip,
+
+  })
+
+  const result = await orderform.save();
+  res.status(201).json({ message: 'order created successfully' });
+}
+
+);
 
 
 module.exports = router

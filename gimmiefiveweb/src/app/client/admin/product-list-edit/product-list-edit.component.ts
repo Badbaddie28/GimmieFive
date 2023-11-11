@@ -14,8 +14,6 @@ export class ProductListEditComponent {
   form!:FormGroup
   productInfo: any[] = [];
 
-  
-
 
   constructor( 
     private http: HttpClient, 

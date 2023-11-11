@@ -37,7 +37,7 @@ export class ProductListComponent {
     })
   }
 
-  redirectToOrgProfile(_id: string) {
+  redirectToProduct(_id: string) {
     this.router.navigate(['/product-list-edit', _id]);
   }
 

@@ -28,6 +28,8 @@ import { OrderstatusComponent } from './client/user/orderstatus/orderstatus.comp
 import { AdminHeaderComponent } from './client/admin/admin-header/admin-header.component';
 import { VisitorproductComponent } from './client/user/visitorproduct/visitorproduct.component';
 import { CheckoutComponent } from './client/user/checkout/checkout.component';
+import { VisitorHeaderComponent } from './client/user/visitor-header/visitor-header.component';
+import { PaymentComponent } from './client/user/payment/payment.component';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { CheckoutComponent } from './client/user/checkout/checkout.component';
     AdminHeaderComponent,
     VisitorproductComponent,
     CheckoutComponent,
+    VisitorHeaderComponent,
+    PaymentComponent
   
   ],
   imports: [

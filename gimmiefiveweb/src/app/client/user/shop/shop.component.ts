@@ -24,6 +24,8 @@ export class ShopComponent {
   NewestArray  : any[]=[];
 
   CategoryArray : String[] =['Tops','Pants','Dress','Jeans','Accessories','Shoes']
+  ColorArray : String[] = ['PURPLE','NAVY','YELLOW','BLACK','WHITE','GRAY', 'RED','BROWN','PINK','ORANGE','GREEN','BLUE']
+  SizeArray : String[] = ['XXS','XS','S','M','L','XL', 'XXL','3XL','4XL']
 
   
   constructor(private http: HttpClient,
@@ -47,13 +49,36 @@ export class ShopComponent {
 
   thisCategory(category:String) {
     this.http.get(`http://localhost:5000/api/getproducts/${category}`)
-      .subscribe((pantsData: any) => {
-        console.log(pantsData);
-        this.ProductArray = pantsData;
+      .subscribe((categoryData: any) => {
+        console.log(categoryData);
+        this.ProductArray = categoryData;
       }, error => {
         console.error(error);
       });
   }
+
+  thisColor(COLOR:String){
+    console.log('Clicked color:', COLOR);
+    this.http.get(`http://localhost:5000/api/getColor/${COLOR}`)
+    .subscribe((colorData: any) => {
+      console.log(colorData);
+      this.ProductArray = colorData;
+    }, error => {
+      console.error(error);
+    });
+  }
+
+  thisSize(SIZE:String){
+    console.log('Clicked size:', SIZE);
+    this.http.get(`http://localhost:5000/api/getSize/${SIZE}`)
+    .subscribe((sizeData: any) => {
+      console.log(sizeData);
+      this.ProductArray = sizeData;
+    }, error => {
+      console.error(error);
+    });
+  }
+  
   
   ascending() {
     this.http.get('http://localhost:5000/api/getproducts/price/ascending')
@@ -82,9 +107,29 @@ export class ShopComponent {
       this.NewestArray = newest;
     }, error => {
       console.error(error);
-    });
+    }); 
 }
+
+
+  isAllSameCategory(): boolean {
+   
+    if (this.ProductArray.length > 0) {
+      const firstCategory = this.ProductArray[0].category;
+
+      return this.ProductArray.every(item => item.category === firstCategory);
+    }
+
+    // Return false if there is only one item or no items
+    return false;
   }
+
+
+  redirectToProduct(_id: string) {
+    this.router.navigate(['/product', _id]);
+  }
+}
+
+  
 
   
 

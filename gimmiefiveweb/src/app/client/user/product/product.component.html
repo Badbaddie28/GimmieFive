@@ -2,8 +2,8 @@
 <body>
    <app-header></app-header>
 
-    <main>
-      <div class="ShopContainer container">
+    <main *ngFor="let productItem of productInfo">
+      <div class="ShopContainer container"  >
         <div class="ShopHero">
             <div class="ShopFirstLayer">
                 <div class="ImagesContainer">
@@ -14,14 +14,13 @@
                 </div>
                 <div class="ShopSecondLayer">
                     <div class="TextContents">
-                        <div class="ShopSort">
+                        <div class="ShopSort"  *ngFor="let category of productInfo">
                             <a href="url"> Shop </a>
                             <span> > </span>
-                            <a href="url"> Tops </a>
+                            <a href="url"> {{category.category}} </a>
                         </div>
                         <div class="ShopProductTitle">
-                            <h1> Raven Hoodie With 
-                                Black colored Design</h1>
+                            <h1>{{ productItem.title}}</h1>
                         </div>
                         <div class="ShopRating">
                             <div class="ShopRatingStars">
@@ -38,140 +37,78 @@
                             
 
                         </div>
-                    </div>
-                    <div class="ShopSize">
-                        <div class="ShopSizeTitle ">
-                            <h4> Select Size </h4>
-                            <h5> Size Guide 
-                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                            </h5>
-                    </div>
+                    </div> </div>
 
-                        <div class="radio-tile-group">
-                            <div class="input-container">
-                              <input id="xs" class="radio-button" type="radio" name="radio" value="xs">
-                              <div class="radio-tile">
-                                
-                                <label for="xs" class="radio-tile-label">XS</label>
-                              </div>
-                            </div>
-                        
-                            <div class="input-container">
-                              <input id="small" class="radio-button" type="radio" name="radio" value="s">
-                              <div class="radio-tile">
-                                
-                                <label for="bike" class="radio-tile-label">S</label>
-                              </div>
-                            </div>
-                        
-                            <div class="input-container">
-                              <input id="medium" class="radio-button" type="radio" name="radio" value="m">
-                              <div class="radio-tile">
-                            
-                                <label for="drive" class="radio-tile-label">M</label>
-                              </div>
-                            </div>
-
-                            <div class="input-container">
-                                <input id="large" class="radio-button" type="radio" name="radio" value="l">
+                    <form [formGroup]="form"(submit)="submit()">
+                    <div class="ShopColor" >
+                        <div class="ShopColorTitle" *ngIf="productInfo[0].sizes">
+                            <h4> Sizes Available </h4>
+                        </div>
+                    
+                        <div class="radio-tile-group" *ngIf="productInfo[0]">
+                            <div class="input-container" *ngFor="let size of productInfo[0].sizes">
+                                <input id="{{size}}" class="radio-button" type="radio" name="size" formControlName="size" [value]="size">
                                 <div class="radio-tile">
-                              
-                                  <label for="drive" class="radio-tile-label">L</label>
-                                </div>
+                                    <label for="{{size}}" class="radio-tile-label">{{size}}</label>
+                                </div> 
                               </div>
-
-                              <div class="input-container">
-                                <input id="xl" class="radio-button" type="radio" name="radio" value="xl">
-                                <div class="radio-tile">
-                              
-                                  <label for="drive" class="radio-tile-label">XL</label>
-                                </div>
-                              </div>
-
-                              <div class="input-container">
-                                <input id="2xl" class="radio-button" type="radio" name="radio" value="2xl">
-                                <div class="radio-tile">
-                              
-                                  <label for="drive" class="radio-tile-label">2XL</label>
-                                </div>
-                              </div>
+                             
                           </div>
-                        
-
-                    
-                    
-                </div> 
-            </div>
+                    </div>
+           
 
                 <div class="ShopColor">
-                    <div class="ShopColorTitle">
+                    <div class="ShopColorTitle" *ngIf="productInfo[0].colors">
                         <h4> Colors Available </h4>
                     </div>
                    
-                        <div class="radio-input">
-                            <input checked="" value="color-1" name="color" id="color-1" type="radio" value="green">
-                            <label for="color-1">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Check"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M6 12L10.2426 16.2426L18.727 7.75732" id="Vector"></path> </g> </g></svg>
-                            </span>
-                            </label>
-                        
-                            <input value="color-2" name="color" id="color-2" type="radio" value="blue">
-                            <label for="color-2">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Check"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M6 12L10.2426 16.2426L18.727 7.75732" id="Vector"></path> </g> </g></svg>
-                            </span>
-                            </label>
-                        
-                            <input value="color-3" name="color" id="color-3" type="radio" value="white">
-                            <label for="color-3">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Check"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M6 12L10.2426 16.2426L18.727 7.75732" id="Vector"></path> </g> </g></svg>
-                            </span>
-                            </label>
-
-                            <input value="color-4" name="color" id="color-4" type="radio" value="yellow">
-                            <label for="color-4">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Check"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M6 12L10.2426 16.2426L18.727 7.75732" id="Vector"></path> </g> </g></svg>
-                            </span>
-                            </label>
-
-                            <input value="color-5" name="color" id="color-5" type="radio" value="broom">
-                            <label for="color-5">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Check"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M6 12L10.2426 16.2426L18.727 7.75732" id="Vector"></path> </g> </g></svg>
-                            </span>
-                            </label>
-
-                            <input value="color-6" name="color" id="color-6" type="radio" value="pink">
-                            <label for="color-6">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Check"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M6 12L10.2426 16.2426L18.727 7.75732" id="Vector"></path> </g> </g></svg>
-                            </span>
-                            </label>
-                        
-                        </div>
-    
+                    <div class="radio-tile-group" *ngIf="productInfo[0]">
+                        <div class="input-container" *ngFor="let color of productInfo[0].colors">
+                          <input id="{{color}}" class="radio-button" type="radio" name="color" formControlName="color"[value]="color">
+                          <div class="radio-tile">
+                            
+                            <label for="{{color}}" class="radio-tile-label">{{color}}</label>
+                          </div>
+                        </div> 
+                      </div>
 
                 </div>
-                
-                <div class="ShopProductProcess">
+
+                <div class="ShopColor">
+                    <div class="ShopColorTitle"  *ngIf="productInfo[0].designs">
+                        <h4> Design </h4>
+                    </div>
+                   
+                    <div class="radio-tile-group">
+                        <div class="input-container" *ngFor="let design of productInfo[0].designs">
+                          <input id="{{design}}" class="radio-button" type="radio" name="design" formControlName="design" [value]="design">
+                          <div class="radio-tile">
+                            
+                            <label for="{{design}}" class="radio-tile-label">{{design}}</label>
+                          </div>
+                        </div>
+                        </div>
+
+                </div>
+            
+                <div class="ShopProductProcess" >
                     <div class="ProductPrice">
-                        <span>
-                            ₱300 only
+                        <span style="font-weight: bold;">
+                          ₱{{productItem.price}}
+
                         </span>
                     <div class="ProductProcessButton">
                         <button class="btn default"> 
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             Add To Cart
                         </button>
-                        <button class="btn default">Buy Now</button>
                     </div>
                     <hr style="border: 1px solid #BEBCBD; width: 70%;">
 
                     </div>
                 </div>
+
+            </form>
 
                 <div class="ProductReminder">
                     <div class="ProductReminderText">
@@ -191,37 +128,10 @@
                     <div class="ShopProductDescription">
                         <span> Description </span>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            {{ productItem.description}}
                         </p>
                     </div>
-                    <div class="ShopProductDesign">
-                        <div class="ShopProductDesignRow row">
-                            <div class="ShopProductDesignCol1 col-3">
-                                <h4> Fabric </h4>
-                                <span> Bio-Washed Cotton</span>
-
-                                <h4> Fabric </h4>
-                                <span> Bio-Washed Cotton</span>
-
-                                <h4> Fabric </h4>
-                                <span> Bio-Washed Cotton</span>
-                            </div>
-
-                            
-
-
-                            <div class="ShopProductDesignCol2 col-3">
-                                <h4> Fabric </h4>
-                                <span> Bio-Washed Cotton</span>
-
-                                <h4> Fabric </h4>
-                                <span> Bio-Washed Cotton</span>
-
-                                <h4> Fabric </h4>
-                                <span> Bio-Washed Cotton</span>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
                 <div class="ShopUserComment">
                     <div class="ShopUserCommentTitle mb-4">

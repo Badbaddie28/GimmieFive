@@ -1,32 +1,93 @@
 const mongoose = require('mongoose')
+const Customer = require('./customer');
+const Product = require('./product');
 
 const orderFormSchema = new mongoose.Schema ({
 
     customerID:{
-        type: String,
-        
+        type: mongoose.Schema.ObjectId, 
+        ref: "Customer"
     },
-    ProductID:{
-        type: String,
-        
+    productID:{
+        type: mongoose.Schema.ObjectId, 
+        ref: "Product"
     },
-    Color:{
-        type: String,
-        
-        unique: true,
-    },
-    Design:{
-        type: String,
-        
-    },
-    Size:{
-        type: String,
-        default : "admin"
+    isCheckedOut:{
+        type: Boolean,
+        default: false
     },
 
-    Quantity:{
-        type: Number,
+    isDelivered:{
+        type: Boolean,
+        default: false
+    },
+
+    isCancelled:{
+        type: Boolean,
+        default: false
+    },
+
+    color:{
+        type: String,
+    
+    },
+    design:{
+        type: String,
         
+    },
+    size:{
+        type: String,
+    },
+
+    quantity:{
+        type: Number,
+        default: 1
+    },
+
+    total:{
+        type:Number,
+        default: 0
+    },
+
+    firstName:{
+        type: String,
+        required: true
+    },
+    lastName:{
+        type: String,
+        required: true
+    },
+
+    contactNum:{
+        type: String,
+        required: true
+    },
+
+    houseNo:{
+        type: String,
+        required: true
+    },
+    street:{
+        type: String,
+        required: true
+    },
+    baranggay:{
+        type: String,
+    },
+    city:{
+        type: String,
+
+    },
+    province:{
+        type: String,
+    },
+    zip:{
+        type: String,
+        required: true
+    },
+
+    note:{
+        type: String,
     },
 
     modeOfPayment:{
@@ -35,9 +96,8 @@ const orderFormSchema = new mongoose.Schema ({
 
     dateCreated:{
         type: Date,
-        default :Date,
-
+        default :Date
     }
 })
 
-module.exports = mongoose.model("OrderForm", adminSchema)
+module.exports = mongoose.model("OrderForm", orderFormSchema)
