@@ -161,6 +161,9 @@ router.post('/login', async (req, res) => {
           res.cookie("jwt", token,{
             httpOnly:true,
             maxAge:3*24*60*60*1000,
+            sameSite: 'None',
+            
+
           })
         
           res.send({
@@ -194,6 +197,7 @@ router.post('/login', async (req, res) => {
       res.cookie("jwt", token,{
         httpOnly:true,
         maxAge:3*24*60*60*1000,
+
       })
     
       res.send({
@@ -457,8 +461,6 @@ router.post('/orderForm', async (req, res) => {
   let modeOfPayment = req.body.modeOfPayment
   let note = req.body.note
 
-
-
   let firstName = req.body.firstName
   let lastName = req.body.lastName
   let contactNum = req.body.contactNum
@@ -468,6 +470,12 @@ router.post('/orderForm', async (req, res) => {
   let city = req.body.city
   let province = req.body.province
   let zip = req.body.zip
+
+  let title = req.body.title
+  let category = req.body.category
+  let price = req.body.price
+
+
 
   const orderform = new OrderForm({
       customerID:customerID,
@@ -493,13 +501,62 @@ router.post('/orderForm', async (req, res) => {
        province : province,
        zip : zip,
 
+        title : title,
+   category : category,
+   price : price
+
   })
 
   const result = await orderform.save();
   res.status(201).json({ message: 'order created successfully' });
 }
 
+
 );
+
+router.get('/cart/:customerID', async (req, res) => {
+  try{
+
+    const customerID = req.params.customerID;
+    // const cookie = req.cookies['jwt']
+    // const claims = jwt.verify(cookie,"secret")
+
+    // if(!claims){
+    //   return res.status(401).send({
+    //     message: "unauthenticated"
+    //   })
+    // }
+
+    const onCart = await OrderForm.find({customerID:customerID})
+    // const {...data} = await onCart.toJSON()
+
+    res.send(onCart)
+
+  }
+  catch(err){
+    return res.status(401).send({
+      message:'not found'
+    })
+  }
+});
+
+
+
+router.patch('/orderForm/:id', async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const body = req.body;
+    const orderForm = await OrderForm.findByIdAndUpdate(_id,body);
+    if (!orderForm) {
+      return res.status(404).send({ error: ' not found' });
+    }
+    res.send(orderForm);
+  } catch (error) {
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
+
 
 
 module.exports = router

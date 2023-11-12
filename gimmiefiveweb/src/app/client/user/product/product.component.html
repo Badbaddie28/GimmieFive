@@ -39,7 +39,7 @@
                         </div>
                     </div> </div>
 
-                    <form [formGroup]="form"(submit)="submit()">
+                    <form [formGroup]="form"(submit)="addToCart(productItem._id)">
                     <div class="ShopColor" >
                         <div class="ShopColorTitle" *ngIf="productInfo[0].sizes">
                             <h4> Sizes Available </h4>

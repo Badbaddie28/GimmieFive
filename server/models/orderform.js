@@ -51,25 +51,24 @@ const orderFormSchema = new mongoose.Schema ({
 
     firstName:{
         type: String,
-        required: true
     },
     lastName:{
         type: String,
-        required: true
+       
     },
 
     contactNum:{
         type: String,
-        required: true
+       
     },
 
     houseNo:{
         type: String,
-        required: true
+       
     },
     street:{
         type: String,
-        required: true
+       
     },
     baranggay:{
         type: String,
@@ -83,10 +82,20 @@ const orderFormSchema = new mongoose.Schema ({
     },
     zip:{
         type: String,
-        required: true
+       
     },
 
     note:{
+        type: String,
+    },
+
+    title :{
+        type: String,
+    },
+    category :{
+        type: String,
+    },
+    price :{
         type: String,
     },
 
