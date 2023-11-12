@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'shop', component: ShopComponent},
-  {path: 'checkout', component:CheckoutComponent},
+  {path: 'checkout/:id', component:CheckoutComponent},
   {path: 'payment', component:PaymentComponent},
   { path: 'contacts', component: ContactusComponent},
   { path: 'profile', component: ProfileComponent},
@@ -46,10 +46,6 @@ const routes: Routes = [
   {path: 'pending', component:PendingComponent},
   {path: 'cancelled', component:CancelledComponent},
   {path: 'orderstatus', component:OrderstatusComponent},
-  {path: 'visitor-product', component:VisitorproductComponent},
-  {path: 'checkout/:id', component:CheckoutComponent},
-  {path: 'payment', component:PaymentComponent},
-
   
 ];
 
