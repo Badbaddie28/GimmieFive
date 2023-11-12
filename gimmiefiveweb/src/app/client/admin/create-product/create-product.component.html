@@ -162,29 +162,37 @@
                         </h2>
                         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
                             <div class="accordion-body">
-                                <div class="CreateMediaContainer">
-                                    <div class="CreateMedia">
-                                        <h6> Upload Product Variation <br>
-                                         Please put all variations on a single image.</h6>
-                                         <div class="file-upload-wrapper " data-text="Select your file!">
-                                            <label id="largeFile" >
-                                                <input type="file" id="file" (change)="onChange($event, 'thumbnail')" accept="image/*">
-                                                
-                                            </label>     
+                                <div class="CreateMedia">
+                                    <h6> Upload Product Variation <br> Please put all variations on a single image.</h6>
+                                    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                                        <input id="upload" type="file" onchange="readURL(this, 'imageResult');" class="form-control border-0" (change)="onChange($event, 'image')" accept="image/*">
+                                        <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                                        <div class="input-group-append">
+                                            <label for="upload" class="btn btn-light m-0 rounded-pill px-4">
+                                                <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+                                                <small class="text-uppercase font-weight-bold text-muted">Choose file</small>
+                                            </label>
                                         </div>
-
-                                        <div class="CreateMedia">
-                                            <h6> Upload Thumbnail <br>
-                                                Single product image for thumbnail.</h6>
-                                             <div class="file-upload-wrapper mt-5" data-text="Select your file!">
-                                                <label id="largeFile" >
-                                                    <input type="file" id="file"  (change)="onChange($event, 'image')" accept="image/*">
-                                                </label>
-                                                
-                                            </div>
+                                    </div>
+                                
+                                    <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+                                </div>
+                                
+                                <div class="CreateMedia">
+                                    <h6> Upload Product Thumbnail <br> Single product. To be used for Thumbnail</h6>
+                                    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                                        <input id="upload1" type="file" onchange="readURL(this, 'imageResult1');" class="form-control border-0" (change)="onChange($event, 'thumbnail')" accept="image/*">
+                                        <label id="upload-label1" for="upload1" class="font-weight-light text-muted">Choose file</label>
+                                        <div class="input-group-append">
+                                            <label for="upload1" class="btn btn-light m-0 rounded-pill px-4">
+                                                <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+                                                <small class="text-uppercase font-weight-bold text-muted">Choose file</small>
+                                            </label>
                                         </div>
-                                    </div> 
-                        </div>
+                                    </div>
+                                
+                                    <div class="image-area mt-4"><img id="imageResult1" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+                                </div>
                       </div>
                   </div>
             </div>
