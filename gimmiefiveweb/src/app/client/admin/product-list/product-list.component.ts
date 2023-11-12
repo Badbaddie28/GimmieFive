@@ -21,7 +21,6 @@ export class ProductListComponent {
   thumbnail= "";
   stocks= "";
 
-
   constructor(private http: HttpClient,
     private router: Router,
     ){
