@@ -42,9 +42,7 @@ const routes: Routes = [
   {path: 'orderstatus', component:OrderstatusComponent},
   {path: 'visitor-product', component:VisitorproductComponent},
   {path: 'checkout/:id', component:CheckoutComponent},
-  {path: 'payment', component:PaymentComponent},
-
-  
+  {path: 'payment/:id', component:PaymentComponent},
 ];
 
 @NgModule({

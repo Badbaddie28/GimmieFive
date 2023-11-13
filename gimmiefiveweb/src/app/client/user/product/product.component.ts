@@ -52,8 +52,8 @@ export class ProductComponent {
           city: "",
           province: "",
             zip: "",
-            note:"",
-            modeOfPayment:"",
+            note:null,
+            modeOfPayment:null,
      })  
       });
 
