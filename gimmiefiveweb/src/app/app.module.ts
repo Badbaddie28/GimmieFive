@@ -30,6 +30,7 @@ import { VisitorproductComponent } from './client/user/visitorproduct/visitorpro
 import { CheckoutComponent } from './client/user/checkout/checkout.component';
 import { VisitorHeaderComponent } from './client/user/visitor-header/visitor-header.component';
 import { PaymentComponent } from './client/user/payment/payment.component';
+import { VisitorHomeComponent } from './client/user/visitor-home/visitor-home.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { PaymentComponent } from './client/user/payment/payment.component';
     VisitorproductComponent,
     CheckoutComponent,
     VisitorHeaderComponent,
-    PaymentComponent
+    PaymentComponent,
+    VisitorHomeComponent
   
   ],
   imports: [

@@ -3,27 +3,24 @@
 
     <main>
         <div class="CollectionContainer container">
-            <div class="CollectionHero">
-                <div class="CollectionFirstLayer"> 
-                    <div class="CollectionSeller">
+            <div class="">
+                <div class=""> 
+                    <div class="">
                         <h1> New Products </h1>
-
-                        <div class="HomeSecondLayer row" >
-                        
-                            <div class="col-lg-3 col-md-3 col-sm-3d-flex" *ngFor="let newest of NewestArray">
-                                <div class="card my-2 shadow-2-strong">
-                                    <img src="../../../../assets/model2.png"  >
-                                    <div class="card-body d-flex flex-column">
-                                    <h5 class="mb-1 me-1"> {{newest.price}} </h5>
-                                    <p class="producttitle"> {{newest.title}}</p>
-                                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-                                        <button class="btn btn-primary shadow-0 me-1" (click)="redirectToProduct(newest._id)">View Product</button>
-                                        <a  class="btn btn-light border icon-hover px-2 pt-2"><i class="fa fa-heart-o"></i> </a>
-                                    </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 d-flex" *ngFor="let newest of NewestArray">
+                                <div class="card" style="width: 30rem; ">
+                                    <img [src]="newest.thumbnail" class="card-img-top" style="height: 312px;">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{newest.title}}</h5>
+                                      <p class="card-text">{{newest.price}}</p>
+                                      <div class="button gap-3">
+                                        <button (click)="redirectToProduct(newest._id)" class="btn btn-primary">View Product</button>
+                                        <a  class="btn btn-light border icon-hover px-2 pt-2 m-2"><i class="fa fa-heart-o"></i> </a>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>   
                 </div>
@@ -195,36 +192,27 @@
                         <!-- Display the first category if not all items have the same category -->
                         <h2 *ngIf="!isAllSameCategory()">All</h2>
                         <h2 *ngIf="ProductArray.length === 0">No Products</h2>
-
-
-
                     
-                      </div>
-                      
-                      
-                    
+                    </div>      
                 </div>
-                <div  >
+                <div>
                     <div class="CollectionImageContainer" >
-                        <div class="CollectionImageRow row" >
-                         
-                            <div class="col-lg-4 col-md-4 col-sm-4 d-flex" *ngFor="let ProductItem of ProductArray">
-                                <div class="card my-2 shadow-2-strong">
-                                    <img src="../../../../assets/model2.png"  >
-                                    <div class="card-body d-flex flex-column">
-                                    <h5 class="mb-1 me-1">PHP{{ProductItem.price}}</h5>
-                                    <p class="producttitle">{{ProductItem.title}}</p>
-                                    <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-                                        <button  class="btn btn-primary shadow-0 me-1" (click)="redirectToProduct(ProductItem._id)">View Product</button>
-                                        <a  class="btn btn-light border icon-hover px-2 pt-2"><i class="fa fa-heart-o"></i> </a>
-                                    </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 d-flex" *ngFor="let ProductItem of ProductArray">
+                                <div class="card" style="width: 500px; ">
+                                    <img [src]="ProductItem.thumbnail" class="card-img-top" >
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{ProductItem.title}}</h5>
+                                      <p class="card-text">{{ProductItem.price}}</p>
+                                      <div class="button gap-3">
+                                        <button class="btn btn-primary" (click)="redirectToProduct(ProductItem._id)">View Product</button>
+                                        <a  class="btn btn-light border icon-hover px-2 pt-2 m-2"><i class="fa fa-heart-o"></i> </a>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
-
-                        
-
                         </div>
+                            
                     </div>
                 </div>
 

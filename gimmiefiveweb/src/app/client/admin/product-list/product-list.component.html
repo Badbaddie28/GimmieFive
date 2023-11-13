@@ -8,13 +8,12 @@
                 <div class="ListProductsCardRow mt-5"> 
                     <div class="ListProductCol col-2" *ngFor="let ProductItem of ProductArray">
                         <div class="card" style="width: 14rem;">
-                            <img src="../../../../assets/model2.png" class="card-img-top" alt="...">
+                            <img  [src]="ProductItem.thumbnail" class="card-img-top" alt="...">
                             <div class="card-body">
                             <p class="card-text">{{ProductItem.title}}</p>
                             <span> Remaining Stocks: </span>
-                                    <p> {{ProductItem.stocks}}</p>
-                          
-                                    <button class="btn btn-primary" (click)="redirectToProduct(ProductItem._id)">Read More</button>
+                                <p> {{ProductItem.stocks}}</p>
+                                <button class="btn btn-primary" (click)="redirectToProduct(ProductItem._id)">Read More</button>
                         </div>
                     </div>
                     </div>

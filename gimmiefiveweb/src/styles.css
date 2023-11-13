@@ -1108,14 +1108,12 @@ hr{
 /* Define styles for the color buttons */
 
 
- .CollectionColorButton button {
+.CollectionColorButton button {
     width: 30px;
     height: 30px;
     border: 1px solid #F4F1F1;
     border-radius: 30%;
-    margin-top: 1.3rem;
-    
-    
+    margin-top: 1.3rem; 
 }
 
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { VisitorHomeComponent } from './client/user/visitor-home/visitor-home.component';
 import { HomeComponent } from './client/user/home/home.component';
 import { LoginComponent } from './client/user/login/login.component';
 import { ProductComponent } from './client/user/product/product.component';
@@ -22,16 +23,21 @@ import { PaymentComponent } from './client/user/payment/payment.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  {path:'home', component:HomeComponent},
-  {path: 'login', component: LoginComponent},
-  { path: 'product/:id', component: ProductComponent },
+  { path: '', redirectTo: "visitor-home", pathMatch: 'full'},
+  { path:'visitor-home', component:VisitorHomeComponent},
   { path: 'visitor-product', component: VisitorproductComponent },
+
+  { path:'home', component:HomeComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'product/:id', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'shop', component: ShopComponent},
+  {path: 'checkout/:id', component:CheckoutComponent},
+  {path: 'payment', component:PaymentComponent},
   { path: 'contacts', component: ContactusComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'cart', component: CartComponent},
+
   {path: 'create-product', component:CreateProductComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path: 'product-list', component:ProductListComponent},
@@ -43,6 +49,7 @@ const routes: Routes = [
   {path: 'visitor-product', component:VisitorproductComponent},
   {path: 'checkout/:id', component:CheckoutComponent},
   {path: 'payment/:id', component:PaymentComponent},
+  
 ];
 
 @NgModule({
