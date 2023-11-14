@@ -31,9 +31,12 @@
                                 <span> {{orderStatus.contactNum}} </span>
                               </div>
                               <div class="OrderStatusBox mt-auto">
-                                <button type="button" class="btn btn-danger"  *ngIf="OrderStatus[0]?.isCancelled">Cancelled</button>
-                                <button type="button" class="btn btn-warning"  *ngIf="OrderStatus[0]?.isCheckedOut">Processing</button>
-                                <button type="button" class="btn btn-success"  *ngIf="OrderStatus[0]?.isDelivered" >Shipped</button>
+                                <button type="button" class="btn btn-danger"  *ngIf="orderStatus.isCancelled">Cancelled</button>
+
+                                <button type="button" class="btn btn-warning"  *ngIf="orderStatus.isCheckedOut && !orderStatus.isDelivered  &&  !orderStatus.isCancelled" >Processing</button>
+
+
+                                <button type="button" class="btn btn-success"  *ngIf="orderStatus.isDelivered" >Shipped</button>
                               </div>
                             </div>
                           </div>

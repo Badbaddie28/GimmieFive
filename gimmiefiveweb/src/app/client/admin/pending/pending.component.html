@@ -1,7 +1,7 @@
 <body>
     <app-admin-header></app-admin-header>
     <main>
-        <div class="Dashboard container">
+        <div class="Dashboard container" >
             <h1> Pending Order Dashboard</h1>
             <div class="DashboardFirstHero">
                 <div class="PendingOrders mt-5">
@@ -11,22 +11,26 @@
                        <table class="table table-striped-columns mt-4">
                           <thead>
                                <tr class="table-info">
-                                   <th> Order Id </th>
+                                   
+                                   <th> Customer Name </th>
                                    <th> Product Name </th>
+                                   <th> Variation</th>
                                    <th> Date Purchased </th>
                                    <th> Mode of Payment </th>
                                    <th> Address </th>
                                    <th> Action </th>
                                </tr>
-                               <tr class="table-info">
-                                   <td> 123 </td>
-                                   <td> Sample </td>
-                                   <td> May 22, 2023</td>
-                                   <td> Cash on Delivery </td>
-                                   <td> Lot 22 Blk 3 Sample st. Brgy. Jupiter, Antipolo St. </td>
+                               <tr class="table-info" *ngFor="let product of ProductArray">
+                                   
+                                   <td> {{product.firstName}} {{product.lastName}} </td>
+                                   <td> {{product.title}} </td>
+                                   <td> {{product.color}} {{product.design}} {{product.size}} </td>
+                                   <td> {{product.dateCreated}}</td>
+                                   <td> {{product.modeOfPayment}} </td>
+                                   <td> {{product.houseNo}}, {{product.street}} st.,{{product.baranggay}} {{product.city}} {{product.province}} {{product.zip}}</td>
                                    <td> 
-                                        <button type="button" class="btn btn-success" style="margin-right: 10px;">To ship</button> 
-                                        <button type="button" class="btn btn-danger">Cancel</button> 
+                                        <button type="button" class="btn btn-success" style="margin-right: 10px;" (click)="shipped(product._id)">To ship</button> 
+                                        <button type="button" class="btn btn-danger" (click)="cancelled(product._id)" >Cancel</button> 
                                     </td>
                                </tr>
 

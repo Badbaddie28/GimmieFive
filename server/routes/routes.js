@@ -356,7 +356,7 @@ router.patch('/product/:id', async (req, res) => {
 router.get('/getproducts/:category', async (req, res) => {
   try {
     const category = req.params.category;
-    const product = await Product.find({ category: category });
+    const product = await Product.find({$and:[{ category: category },{stocks:{ $gt: 0 }}]});
     if (!product || product.length === 0) {
       return res.status(404).send({ error: 'Product not found' });
     }
@@ -371,7 +371,7 @@ router.get('/getproducts/:category', async (req, res) => {
 
 router.get('/getproducts/price/ascending', async (req, res) => {
   try {
-    const product = await Product.find().sort({price:1});
+    const product = await Product.find().sort({$and:[{ price: 1 },{stocks:{ $gt: 0 }}]});
     if (!product || product.length === 0) {
       return res.status(404).send({ error: 'Product not found' });
     }
@@ -386,7 +386,7 @@ router.get('/getproducts/price/ascending', async (req, res) => {
 
 router.get('/getproducts/price/descending', async (req, res) => {
   try {
-    const product = await Product.find().sort({price:-1});
+    const product = await Product.find().sort({$and:[{ price: -1 },{stocks:{ $gt: 0 }}]});
     if (!product || product.length === 0) {
       return res.status(404).send({ error: 'Product not found' });
     }
@@ -404,7 +404,7 @@ router.get('/getColor/:COLOR', async (req, res) => {
     const COLOR = req.params.COLOR;
     console.log('Requested Color:', COLOR);
 
-    const product = await Product.find({ colors: COLOR });
+    const product = await Product.find({$and:[{ colors: COLOR },{stocks:{ $gt: 0 }}]});
 
 
     res.send(product);
@@ -420,7 +420,7 @@ router.get('/getSize/:SIZE', async (req, res) => {
   try {
     const SIZE = req.params.SIZE;
 
-    const product = await Product.find({ sizes: SIZE });
+    const product = await Product.find({$and:[{ sizes: SIZE },{stocks:{ $gt: 0 }}]});
 
 
     res.send(product);
@@ -434,7 +434,7 @@ router.get('/getSize/:SIZE', async (req, res) => {
 
 router.get('/newest', async (req, res) => {
   try {
-    const product = await Product.find().sort({dateCreated:-1}).limit(4);
+    const product = await Product.find({stocks:{ $gt: 0 }}).sort({dateCreated:-1}).limit(4);
     if (!product || product.length === 0) {
       return res.status(404).send({ error: 'Products not found' });
     }
@@ -527,7 +527,7 @@ router.get('/cart/:customerID', async (req, res) => {
     //   })
     // }
 
-    const onCart = await OrderForm.find({customerID:customerID})
+    const onCart = await OrderForm.find({$and:[{customerID:customerID}, {isCheckedOut:false}]})
     // const {...data} = await onCart.toJSON()
 
     res.send(onCart)
@@ -599,6 +599,24 @@ router.get('/orderstatus/:customerID', async (req, res) => {
     })
   }
 });
+
+router.get('/pending', async (req, res) => {
+  try{
+
+
+    const pending = await OrderForm.find({$and:[{isCheckedOut:true},{isDelivered:false},{isCancelled:false}]})
+
+    res.send(pending)
+
+  }
+  catch(err){
+    return res.status(401).send({
+      message:'not found'
+    })
+  }
+});
+
+
 
 
 
