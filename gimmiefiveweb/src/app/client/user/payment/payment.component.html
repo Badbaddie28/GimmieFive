@@ -23,6 +23,7 @@
   </header>
   
   <section class="bg-light py-5">
+    <form [formGroup]="form"(submit)="placeOrder()" id="msform">  
     <div class="container">
       <div class="row">
         <div class="col-xl-8 col-lg-8 mb-4">
@@ -35,33 +36,27 @@
                 <div class="col-6 mb-3">
                   <p class="mb-0">First name</p>
                   <div class="form-outline">
-                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" formControlName="firstName" />
                   </div>
                 </div>
   
                 <div class="col-6">
                   <p class="mb-0">Last name</p>
                   <div class="form-outline">
-                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" formControlName="lastName" />
                   </div>
                 </div>
   
                 <div class="col-6 mb-3">
                   <p class="mb-0">Phone Number</p>
                   <div class="form-outline">
-                    <input type="tel" id="typePhone" value="+63 " class="form-control" />
+                    <input type="tel" id="typePhone" value="+63 " class="form-control" formControlName="contactNum" />
                   </div>
                 </div>
   
-                <div class="col-6 mb-3">
-                  <p class="mb-0">Email</p>
-                  <div class="form-outline">
-                    <input type="email" id="typeEmail" placeholder="example@gmail.com" class="form-control" />
-                  </div>
-                </div>
+             
               </div>
 
-  
               <hr class="my-4" />
   
               <h5 class="card-title mb-3">Shipping info</h5>
@@ -71,7 +66,10 @@
                   <!-- Default radio -->
                   <div class="form-check h-100 border rounded-3">
                     <div class="p-3">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+
+
+                      <input class="form-check-input" type="radio" name="modeOfPayment" id="modeOfPayment" formControlName="modeOfPayment" value="Card"/>
+
                       <label class="form-check-label" for="flexRadioDefault1">
                         <i class="fa fa-credit-card text-muted fa-lg" aria-hidden="true"></i> Card <br/>
                       </label>
@@ -82,18 +80,21 @@
                   <!-- Default radio -->
                 <div class="form-check h-100 border rounded-3">
                     <div class="p-3">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+
+                       <input class="form-check-input" type="radio" name="modeOfPayment" id="modeOfPayment" formControlName="modeOfPayment" value="COD"/>
+
                       <label class="form-check-label" for="flexRadioDefault2">
                         <i class="fa fa-money text-muted fa-lg" aria-hidden="true"></i> Cash on Delivery<br />
                       </label>
                     </div>
                   </div>
+                  
                 </div>
                 <div class="col-lg-4 mb-3">
                   <!-- Default radio -->
                   <div class="form-check h-100 border rounded-3">
                     <div class="p-3">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                       <input class="form-check-input" type="radio" name="modeOfPayment" id="modeOfPayment" formControlName="modeOfPayment" value="GCash"/>
                       <label class="form-check-label" for="flexRadioDefault3">
                         <i class="fa fa-mobile text-muted fa-lg" aria-hidden="true"></i> Gcash <br/>
                       </label>
@@ -104,38 +105,53 @@
   
               <div class="row">
                 <div class="col-sm-8 mb-3">
-                  <p class="mb-0">Full Address</p>
+                  <p class="mb-0">House No.</p>
                   <div class="form-outline">
-                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" formControlName="houseNo"/>
                   </div>
                 </div>
   
                 <div class="col-sm-4 mb-3">
-                    <p class="mb-0">City / Province</p>
+                    <p class="mb-0">Street</p>
                     <div class="form-outline">
-                      <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                      <input type="text" id="typeText" placeholder="Type here" class="form-control" formControlName="street" />
                     </div>
                 </div>
   
                 <div class="col-sm-6 mb-6">
-                  <p class="mb-0">House</p>
+                  <p class="mb-0">Barangay</p>
                   <div class="form-outline">
-                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" formControlName="baranggay" />
                   </div>
                 </div>
   
                 <div class="col-sm-4 col-6 mb-6">
+                  <p class="mb-0">City</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" class="form-control" formControlName="city" />
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-6 mb-6">
+                  <p class="mb-0">Province</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" class="form-control" formControlName="province" />
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-6 mb-6">
                   <p class="mb-0">Zip Code</p>
                   <div class="form-outline">
-                    <input type="text" id="typeText" class="form-control" />
+                    <input type="text" id="typeText" class="form-control" formControlName="zip" />
                   </div>
                 </div>
               </div>
+              
   
               <div class="mb-3">
                 <p class="mb-0 mt-3">Message to seller</p>
                 <div class="form-outline">
-                  <textarea class="form-control" id="textAreaExample1" rows="2"></textarea>
+                  <textarea class="form-control" id="textAreaExample1" rows="2" formControlName="note"></textarea>
                 </div>
               </div>
   
@@ -152,16 +168,13 @@
             <h6 class="mb-3">Summary</h6>
             <div class="d-flex justify-content-between">
               <p class="mb-2">Total price:</p>
-              <p class="mb-2">$195.90</p>
+              <p class="mb-2">{{ orderTotal | currency: 'PHP':true }}</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p class="mb-2">Discount:</p>
-              <p class="mb-2 text-danger">- $60.00</p>
+              <p class="mb-2">Shipping:</p>
+              <p class="mb-2 text-danger">{{ shippingFee | currency: 'PHP':true }}</p>
             </div>
-            <div class="d-flex justify-content-between">
-              <p class="mb-2">Shipping cost:</p>
-              <p class="mb-2">+ $14.00</p>
-            </div>
+           
             <br/>
             <br/>
             <div class="d-flex justify-content-between">
@@ -219,4 +232,5 @@
         </div>
       </div>
     </div>
+    </form>
   </section>

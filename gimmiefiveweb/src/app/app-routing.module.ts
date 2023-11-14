@@ -46,6 +46,9 @@ const routes: Routes = [
   {path: 'pending', component:PendingComponent},
   {path: 'cancelled', component:CancelledComponent},
   {path: 'orderstatus', component:OrderstatusComponent},
+  {path: 'visitor-product', component:VisitorproductComponent},
+  {path: 'checkout/:id', component:CheckoutComponent},
+  {path: 'payment/:id', component:PaymentComponent},
   
 ];
 

@@ -540,6 +540,32 @@ router.get('/cart/:customerID', async (req, res) => {
   }
 });
 
+router.get('/checkout/:id', async (req, res) => {
+  try{
+
+    const _id = req.params.id;
+    // const cookie = req.cookies['jwt']
+    // const claims = jwt.verify(cookie,"secret")
+
+    // if(!claims){
+    //   return res.status(401).send({
+    //     message: "unauthenticated"
+    //   })
+    // }
+
+    const checkout = await OrderForm.findById({_id:_id})
+    // const {...data} = await onCart.toJSON()
+
+    res.send(checkout)
+
+  }
+  catch(err){
+    return res.status(401).send({
+      message:'not found'
+    })
+  }
+});
+
 
 
 router.patch('/orderForm/:id', async (req, res) => {
@@ -555,6 +581,25 @@ router.patch('/orderForm/:id', async (req, res) => {
     res.status(500).send({ error: 'Internal Server Error' });
   }
 });
+
+
+router.get('/orderstatus/:customerID', async (req, res) => {
+  try{
+
+    const _id = req.params.customerID;
+
+    const checkout = await OrderForm.find({$and:[{isCheckedOut:true},{customerID:_id}]})
+
+    res.send(checkout)
+
+  }
+  catch(err){
+    return res.status(401).send({
+      message:'not found'
+    })
+  }
+});
+
 
 
 
