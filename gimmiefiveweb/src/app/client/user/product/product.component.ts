@@ -92,6 +92,8 @@ addToCart(_id: string){
       const title = this.product.title;
       const category = this.product.category;
       const price = this.product.price;
+      const thumbnail = this.product.thumbnail;
+
 
       let orderForm = this.form.getRawValue();
 
@@ -116,6 +118,7 @@ addToCart(_id: string){
         total:total,
         note : orderForm.note,
         modeOfPayment : orderForm.modeOfPayment,
+        thumbnail:thumbnail
   
       };   
 

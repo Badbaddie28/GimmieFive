@@ -10,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class OrderstatusComponent {
   OrderStatus: any[] = [];
+  ProductArray: any[] = [];
+
 
   constructor(
     private http: HttpClient, 
@@ -27,6 +29,8 @@ export class OrderstatusComponent {
       });
 }
 
+
+
 getOrderStatus(){
   this.http.get('http://localhost:5000/api/customer', {withCredentials : true})
   .subscribe(
@@ -42,10 +46,18 @@ getOrderStatus(){
       this.OrderStatus = resultData;
     })
 
+      this.http.get(`http://localhost:5000/api/myOrders/${customerID}`)
+      .subscribe((resultData: any)=>
+      {
+        console.log(resultData);
+        this.ProductArray = resultData;
+      })
+  
   
 
-      
+}
 
-})
+
+)
 }
 }

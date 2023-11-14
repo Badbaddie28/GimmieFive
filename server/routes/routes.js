@@ -371,7 +371,7 @@ router.get('/getproducts/:category', async (req, res) => {
 
 router.get('/getproducts/price/ascending', async (req, res) => {
   try {
-    const product = await Product.find().sort({$and:[{ price: 1 },{stocks:{ $gt: 0 }}]});
+    const product = await Product.find().sort({ price: 1 });
     if (!product || product.length === 0) {
       return res.status(404).send({ error: 'Product not found' });
     }
@@ -386,7 +386,7 @@ router.get('/getproducts/price/ascending', async (req, res) => {
 
 router.get('/getproducts/price/descending', async (req, res) => {
   try {
-    const product = await Product.find().sort({$and:[{ price: -1 },{stocks:{ $gt: 0 }}]});
+    const product = await Product.find().sort({ price: -1 });
     if (!product || product.length === 0) {
       return res.status(404).send({ error: 'Product not found' });
     }
@@ -474,6 +474,8 @@ router.post('/orderForm', async (req, res) => {
   let title = req.body.title
   let category = req.body.category
   let price = req.body.price
+  let thumbnail = req.body.thumbnail
+
 
 
 
@@ -503,7 +505,9 @@ router.post('/orderForm', async (req, res) => {
 
         title : title,
    category : category,
-   price : price
+   price : price,
+   thumbnail : thumbnail
+
 
   })
 
@@ -613,6 +617,34 @@ router.get('/pending', async (req, res) => {
     return res.status(401).send({
       message:'not found'
     })
+  }
+});
+
+router.get('/myOrders/:customerID', async (req, res) => {
+  const customerID = req.params.customerID;
+
+  try {
+    const orderstatus = await OrderForm.find({ customerID: customerID });
+
+    if (orderstatus.length === 0) {
+      return res.status(404).send('No membership applications found');
+    }
+
+    const productIDs = orderstatus.map(application => application.productID);
+
+    const products = await Product.find({ _id: { $in: productIDs } });
+
+    // console.log('orgIDs:', orgIDs);
+
+    if (products.length === 0) {
+      return res.status(404).send('No products found for the given membership applications');
+    }
+
+    res.send(products);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    res.status(500).send('Internal Server Error');
   }
 });
 

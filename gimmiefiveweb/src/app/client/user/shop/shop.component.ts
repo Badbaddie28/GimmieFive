@@ -24,8 +24,8 @@ export class ShopComponent {
   NewestArray  : any[]=[];
 
   CategoryArray : String[] =['Tops','Pants','Dress','Jeans','Accessories','Shoes']
-  ColorArray : String[] = ['PURPLE','NAVY','YELLOW','BLACK','WHITE','GRAY', 'RED','BROWN','PINK','ORANGE','GREEN','BLUE']
-  SizeArray : String[] = ['XXS','XS','S','M','L','XL', 'XXL','3XL','4XL']
+  ColorArray : String[] = ['purple','navy','yellow','black','white','gray', 'red','brown','pink','orange','green','blue']
+  SizeArray : String[] = ['xxs','xs','s','m','l','xl', 'xxl','3xl','4xl']
 
   
   constructor(private http: HttpClient,

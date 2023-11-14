@@ -103,6 +103,12 @@ const orderFormSchema = new mongoose.Schema ({
         type: String,
     },
 
+    thumbnail:{
+        type: String,
+    },
+
+
+
     dateCreated:{
         type: Date,
         default :Date

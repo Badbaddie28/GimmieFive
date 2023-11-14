@@ -6,8 +6,8 @@
                 <div class="OrderStatusCardContainer">
                     <div class="card mb-3" style="width: 45rem;" *ngFor="let orderStatus of OrderStatus">
                         <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="../../../../assets/model.png" class="img-fluid rounded-start" alt="...">
+                          <div class="col-md-4" >
+                            <img [src]="orderStatus.thumbnail" class="img-fluid rounded-start" alt="...">
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
