@@ -5,22 +5,9 @@
      <main>
        <div class="ShopContainer container">
          <div class="ShopHero">
-             <div class="ShopFirstLayer">
-                 <div class="ImagesContainer">
-                     <div class="ShopSubImages">
-                         <img src="../../../../assets/shopsample.png" height="68.04px" width="68.04px">
-                         <img src="../../../../assets/shopsample.png" height="68.04px" width="68.04px">
-                         <img src="../../../../assets/shopsample.png" height="68.04px" width="68.04px">
-                         <button id="scrollUp" class="scroll-button">
-                             <i class="fa fa-angle-up" aria-hidden="true"></i>
-                           </button>
-                           <button id="scrollDown" class="scroll-button">
-                             <i class="fa fa-angle-down" aria-hidden="true"></i>
-                           </button>
-                     </div>
-                 </div>
-                 <div class="ShopMainImage">
-                     <img src="../../../../assets/ShopMain.png">
+             <div class="ShopFirstLayer"  *ngFor="let ProductItem of ProductArray">
+                 <div class="ShopMainImage" >
+                     <img [src]="ProductItem.thumbnail">
                  </div>
                  <div class="ShopSecondLayer">
                      <div class="TextContents">
@@ -30,8 +17,7 @@
                              <a href="url"> Tops </a>
                          </div>
                          <div class="ShopProductTitle">
-                             <h1> Raven Hoodie With 
-                                 Black colored Design</h1>
+                             <h1>{{ProductItem.title}}</h1>
                          </div>
                          <div class="ShopRating">
                              <div class="ShopRatingStars">
@@ -45,8 +31,6 @@
                                  <span> 3.5</span>
                                  <i class="fa fa-comment-o" aria-hidden="true"></i>
                                  <span> 120 Comments </span>
-                             
- 
                          </div>
                      </div>
                      <div class="ShopSize">
@@ -89,7 +73,7 @@
                  <div class="ShopProductProcess">
                      <div class="ProductPrice">
                          <span>
-                             ₱300 only
+                            {{ProductItem.price}}
                          </span>
                      <div class="ProductProcessButton">
                          <button class="btn default" routerLink="/login"> 
@@ -124,182 +108,12 @@
                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                          </p>
                      </div>
-                     <div class="ShopProductDesign">
-                         <div class="ShopProductDesignRow row">
-                             <div class="ShopProductDesignCol1 col-3">
-                                 <h4> Fabric </h4>
-                                 <span> Bio-Washed Cotton</span>
- 
-                                 <h4> Fabric </h4>
-                                 <span> Bio-Washed Cotton</span>
- 
-                                 <h4> Fabric </h4>
-                                 <span> Bio-Washed Cotton</span>
-                             </div>
- 
-                             
- 
- 
-                             <div class="ShopProductDesignCol2 col-3">
-                                 <h4> Fabric </h4>
-                                 <span> Bio-Washed Cotton</span>
- 
-                                 <h4> Fabric </h4>
-                                 <span> Bio-Washed Cotton</span>
- 
-                                 <h4> Fabric </h4>
-                                 <span> Bio-Washed Cotton</span>
-                             </div>
-                         </div>
-                     </div>
+
                  </div>
                  
              </div>
          </div> 
  
-         <div class="ShopThirdHero container-fluid">
-             <div class="ShopSimilarProductContainer">
-                 <div class="ShopFourthLayer">
-                     <div class="ShopSimilarProduct">
-                         <h2> Similar Products </h2>
-                     </div>
-                     <div class="ShopSimilarProductImageContainer">
-                         <div class="FourthLayerContainer">
-                             <div class="HomeFourthLayer row">
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 
-                         </div>
-                         
-                         
-                         
-                         
-                     </div>
-                     </div>
-                     <div class="ShopSimilarProductImageContainer">
-                         <div class="FourthLayerContainer">
-                             <div class="HomeFourthLayer row">
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 <div class="FourthLayer col-3">
-                                     <div class="product-container">
-                                         <img src="../../../../assets/model2.png"  width="200px" height="280px" >
-                                         <button class="fourth-favorite-button">
-                                             <i class="fa fa-heart-o"></i> 
-                                         </button>
-                                             
-                                     </div>
-                                     <div class="fourthpricecontainer">  
-                                         <h3 class="producttitle"> Lorem Ipsum </h3>
-                                         <h3 class="productprice "> PHP 180 </h3>
-                                     </div>
-                                 <span> Lorem Ipsum Dolor</span>
-                                 </div>
-                                 
-                         </div>
-                         
-                         
-                         
-                         
-                     </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
        </div> 
      </main>
      <script>

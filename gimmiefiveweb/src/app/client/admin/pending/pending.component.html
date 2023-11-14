@@ -2,15 +2,11 @@
     <app-admin-header></app-admin-header>
     <main>
         <div class="Dashboard container">
-            <h1> Cancelled</h1>
+            <h1> Pending Order Dashboard</h1>
             <div class="DashboardFirstHero">
                 <div class="PendingOrders mt-5">
                     <div class="PendingTitle">
                        <h3> Pending Orders</h3>
-                       <div class="PendingButtons">
-                           <button type="button" class="btn btn-danger">Cancel</button>
-                           <button type="button" class="btn btn-success">Deliver</button>
-                       </div>
                     </div>   
                        <table class="table table-striped-columns mt-4">
                           <thead>
@@ -20,6 +16,7 @@
                                    <th> Date Purchased </th>
                                    <th> Mode of Payment </th>
                                    <th> Address </th>
+                                   <th> Action </th>
                                </tr>
                                <tr class="table-info">
                                    <td> 123 </td>
@@ -27,41 +24,10 @@
                                    <td> May 22, 2023</td>
                                    <td> Cash on Delivery </td>
                                    <td> Lot 22 Blk 3 Sample st. Brgy. Jupiter, Antipolo St. </td>
-                               </tr>
-                               <tr class="table-info">
-                                   <td> 123 </td>
-                                   <td> Sample </td>
-                                   <td> May 22, 2023</td>
-                                   <td> Cash on Delivery </td>
-                                   <td> Lot 22 Blk 3 Sample st. Brgy. Jupiter, Antipolo St. </td>
-                               </tr>
-                               <tr class="table-info">
-                                   <td> 123 </td>
-                                   <td> Sample </td>
-                                   <td> May 22, 2023</td>
-                                   <td> Cash on Delivery </td>
-                                   <td> Lot 22 Blk 3 Sample st. Brgy. Jupiter, Antipolo St. </td>
-                               </tr>
-                               <tr class="table-info">
-                                   <td> 123 </td>
-                                   <td> Sample </td>
-                                   <td> May 22, 2023</td>
-                                   <td> Cash on Delivery </td>
-                                   <td> Lot 22 Blk 3 Sample st. Brgy. Jupiter, Antipolo St. </td>
-                               </tr>
-                               <tr class="table-info">
-                                   <td> 123 </td>
-                                   <td> Sample </td>
-                                   <td> May 22, 2023</td>
-                                   <td> Cash on Delivery </td>
-                                   <td> Lot 22 Blk 3 Sample st. Brgy. Jupiter, Antipolo St. </td>
-                               </tr>
-                               <tr class="table-info">
-                                   <td> 123 </td>
-                                   <td> Sample </td>
-                                   <td> May 22, 2023</td>
-                                   <td> Cash on Delivery </td>
-                                   <td> Lot 22 Blk 3 Sample st. Brgy. Jupiter, Antipolo St. </td>
+                                   <td> 
+                                        <button type="button" class="btn btn-success" style="margin-right: 10px;">To ship</button> 
+                                        <button type="button" class="btn btn-danger">Cancel</button> 
+                                    </td>
                                </tr>
 
                           </thead>
