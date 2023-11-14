@@ -14,6 +14,7 @@ export class ProductComponent {
   product : any={};
   CustomerInfo: any[] = [];
   form: any;
+ProductItem: any;
 
 
   constructor( 
@@ -76,7 +77,6 @@ addToCart(_id: string){
       console.log(customerData);
 
       this.CustomerInfo = [customerData];
-
       const customerID = customerData._id;
       const productID = _id;
       const firstName = customerData.firstName;
@@ -92,11 +92,6 @@ addToCart(_id: string){
       const title = this.product.title;
       const category = this.product.category;
       const price = this.product.price;
-
-    
-      
-
-    
 
       let orderForm = this.form.getRawValue();
 
