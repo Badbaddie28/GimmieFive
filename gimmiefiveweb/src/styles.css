@@ -161,6 +161,7 @@
     color:#748C70 !important;
     border-radius: 0 !important;
     border-color: #D9DDBD !important ;
+    margin-top: 2rem;
 }
 
 .SignInReminder{
@@ -169,6 +170,7 @@
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    margin-top: 2rem;
 }
 
 .SignInReminder  label{
